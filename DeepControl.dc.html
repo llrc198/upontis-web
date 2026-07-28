@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<template id="__bundler_thumbnail" data-bg-color="#201a10">
+  <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><rect width="100" height="100" fill="#201a10"/><text x="50" y="58" font-family="sans-serif" font-weight="700" font-size="34" fill="#F9F4EC" text-anchor="middle">µ</text><path d="M25 72 Q50 82 75 72" fill="none" stroke="#E14D28" stroke-width="4" stroke-linecap="round"/></svg>
+</template>
+<helmet>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 70 70'%3E%3Crect x='4' y='4' width='62' height='62' rx='14' fill='%23201A10'/%3E%3Ctext x='35' y='42' font-family='sans-serif' font-weight='700' font-size='26' fill='%23F9F4EC' text-anchor='middle'%3E%CE%BC%3C/text%3E%3Cpath d='M14 52 Q35 60 56 52' fill='none' stroke='%23E14D28' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&amp;family=IBM+Plex+Sans:wght@400;500;600&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+  <style>
+    body{margin:0;background:oklch(0.97 0.012 80);}
+    a{color:var(--dc-accent);text-decoration:none;}
+    a:hover{color:var(--dc-accent-hover);}
+    ::selection{background:color-mix(in srgb, var(--dc-accent) 25%, transparent);}
+    input,textarea{font-family:'IBM Plex Sans',sans-serif;}
+  </style>
+  <script src="./image-slot.js"></script>
+  <style>
+    input::placeholder,textarea::placeholder{color:oklch(0.55 0.02 80);}
+  </style>
+</helmet>
+
+<div style="font-family:'IBM Plex Sans',sans-serif;color:oklch(0.22 0.02 80);background:oklch(0.97 0.012 80);width:100%;overflow-x:hidden;{{ themeVars }}">
+
+  <header style="position:fixed;top:0;left:0;right:0;z-index:100;height:72px;background:oklch(0.97 0.012 80 / 0.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--dc-border);">
+    <div style="max-width:1280px;margin:0 auto;height:100%;display:flex;align-items:center;justify-content:space-between;padding:0 40px;">
+      <a href="#inicio" style="display:flex;flex-direction:column;align-items:flex-start;gap:2px;">
+        <span style="font-family:'IBM Plex Sans',sans-serif;font-weight:700;font-size:19px;letter-spacing:-0.01em;color:oklch(0.22 0.02 80);">µpontis</span>
+        <svg width="70" height="9" viewBox="0 0 210 26"><line x1="10" y1="14" x2="75" y2="14" stroke="#E14D28" stroke-width="2.5" stroke-linecap="round"></line><path d="M75 14 C75 3 85 3 85 14 C85 25 95 25 95 14 C95 3 105 3 105 14 C105 25 115 25 115 14 C115 3 125 3 125 14 C125 25 135 25 135 14" fill="none" stroke="#E14D28" stroke-width="2.5" stroke-linecap="round"></path><line x1="135" y1="14" x2="200" y2="14" stroke="#E14D28" stroke-width="2.5" stroke-linecap="round"></line></svg>
+      </a>
+      <nav style="display:none;gap:36px;align-items:center;" class="dc-desktop-nav">
+        <a href="#inicio" style="font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:0.03em;color:oklch(0.22 0.02 80);">INICIO</a>
+        <a href="#plataforma" style="font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:0.03em;color:oklch(0.22 0.02 80);">PLATAFORMA</a>
+        <a href="#aplicaciones" style="font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:0.03em;color:oklch(0.22 0.02 80);">APLICACIONES</a>
+        <a href="#contacto" style="font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:0.03em;padding:8px 18px;border:1px solid oklch(0.22 0.02 80);border-radius:6px;color:oklch(0.22 0.02 80);">CONTACTO</a>
+      </nav>
+      <button onClick="{{ toggleMobileNav }}" class="dc-hamburger" style="background:none;border:none;font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:0.03em;color:oklch(0.22 0.02 80);cursor:pointer;">{{ mobileMenuLabel }}</button>
+    </div>
+  </header>
+
+  <helmet>
+    <style>
+      @media (min-width: 860px){ .dc-desktop-nav{ display:flex !important; } .dc-hamburger{ display:none !important; } }
+      @media (max-width: 859px){
+        .dc-grid-2, .dc-grid-3, .dc-grid-2-1, .dc-grid-1-2 { grid-template-columns: 1fr !important; }
+        .dc-grid-3 > div[style*="grid-column"] { grid-column: 1 / -1 !important; }
+        .dc-border-r { border-right: none !important; border-bottom: 1px solid var(--dc-border) !important; }
+      }
+    </style>
+  </helmet>
+
+  <sc-if value="{{ mobileOpen }}" hint-placeholder-val="{{ false }}">
+    <nav style="position:fixed;top:72px;left:0;right:0;z-index:99;display:flex;flex-direction:column;background:oklch(0.97 0.012 80);border-bottom:1px solid oklch(0.22 0.02 80 / 0.1);padding:8px 40px 20px;">
+      <a href="#inicio" onClick="{{ closeMobileNav }}" style="font-family:'IBM Plex Mono',monospace;font-size:14px;padding:12px 0;border-bottom:1px solid oklch(0.22 0.02 80 / 0.08);">INICIO</a>
+      <a href="#plataforma" onClick="{{ closeMobileNav }}" style="font-family:'IBM Plex Mono',monospace;font-size:14px;padding:12px 0;border-bottom:1px solid oklch(0.22 0.02 80 / 0.08);">PLATAFORMA</a>
+      <a href="#aplicaciones" onClick="{{ closeMobileNav }}" style="font-family:'IBM Plex Mono',monospace;font-size:14px;padding:12px 0;border-bottom:1px solid oklch(0.22 0.02 80 / 0.08);">APLICACIONES</a>
+      <a href="#contacto" onClick="{{ closeMobileNav }}" style="font-family:'IBM Plex Mono',monospace;font-size:14px;padding:12px 0;">CONTACTO</a>
+    </nav>
+  </sc-if>
+
+  <!-- HERO -->
+  <section id="inicio" data-screen-label="Hero" style="padding-top:72px;max-width:1280px;margin:0 auto;border-left:1px solid var(--dc-border);border-right:1px solid var(--dc-border);">
+    <div style="display:flex;justify-content:space-between;padding:16px 40px;border-bottom:1px solid var(--dc-border);background:#201a10;">
+      <span style="font-family: &quot;IBM Plex Mono&quot;, monospace; font-size: 11px; letter-spacing: 0.08em; color: oklch(0.75 0.02 80); display: var(--dc-eyebrow-display);"><b>MICROFLUÍDICA APLICADA</b><br></span>
+      <span style="font-family: &quot;IBM Plex Mono&quot;, monospace; font-size: 11px; letter-spacing: 0.08em; color: oklch(0.75 0.02 80); display: var(--dc-eyebrow-display);">SCROLL ↓</span>
+    </div>
+    <div class="dc-grid-2" style="display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid var(--dc-border);">
+      <div class="dc-border-r" style="border-right:1px solid var(--dc-border);position:relative;overflow:hidden;">
+        <img src="./assets/chip-hero.webp" alt="Chip microfluídico en análisis" style="width:100%;height:100%;min-height:340px;object-fit:cover;display:block;">
+      </div>
+      <div style="display:flex;flex-direction:column;justify-content:center;padding:56px 44px;">
+        <h1 style="font-family:'Newsreader',serif;font-weight:500;font-size:clamp(30px,4vw,46px);line-height:1.12;margin:0 0 24px;letter-spacing:-0.01em;">Llevamos la precisión del laboratorio directamente al proceso.</h1>
+        <p style="font-size:17px;line-height:1.6;color:oklch(0.42 0.02 80);margin:0 0 32px;">Mejora tus procesos con un control analítico propio, sin depender de un laboratorio centralizado.</p>
+        <a href="#contacto" style="align-self:flex-start;font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:0.03em;padding:14px 28px;border-radius:6px;background:#201a10;color:oklch(0.97 0.012 80);">Conversemos sobre tu caso</a>
+      </div>
+    </div>
+
+    <!-- Pilares de valor -->
+    <div class="dc-grid-3" style="display:grid;grid-template-columns:repeat(3,1fr);border-bottom:1px solid var(--dc-border);">
+      <div style="grid-column:1 / -1;padding:14px 40px;border-bottom:1px solid var(--dc-border);">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.08em;color:oklch(0.5 0.02 80);display:var(--dc-eyebrow-display);"><b>PILARES DE VALOR</b></span>
+      </div>
+      <div style="padding:var(--dc-pad-m);border-right:1px solid var(--dc-border);">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--dc-accent);">01</span>
+        <h3 style="font-family:'Newsreader',serif;font-weight:500;font-size:22px;margin:10px 0 10px;">Modularidad</h3>
+        <p style="font-size:15px;line-height:1.6;color:oklch(0.42 0.02 80);margin:0;">Chips intercambiables. Un mismo sistema, múltiples analitos y aplicaciones.</p>
+      </div>
+      <div style="padding:var(--dc-pad-m);border-right:1px solid var(--dc-border);">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--dc-accent);">02</span>
+        <h3 style="font-family:'Newsreader',serif;font-weight:500;font-size:22px;margin:10px 0 10px;">Portabilidad</h3>
+        <p style="font-size:15px;line-height:1.6;color:oklch(0.42 0.02 80);margin:0;">El análisis se hace donde ocurre el proceso, no donde está el laboratorio.</p>
+      </div>
+      <div style="padding:var(--dc-pad-m);">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--dc-accent);">03</span>
+        <h3 style="font-family:'Newsreader',serif;font-weight:500;font-size:22px;margin:10px 0 10px;">Velocidad</h3>
+        <p style="font-size:15px;line-height:1.6;color:oklch(0.42 0.02 80);margin:0;">Resultados en el sitio, sin esperar días por un tercero.</p>
+      </div>
+    </div>
+
+    <!-- Cómo funciona -->
+    <div style="border-bottom:1px solid var(--dc-border);">
+      <div style="padding:14px 40px;border-bottom:1px solid var(--dc-border);">
+        <span style="font-family: &quot;IBM Plex Mono&quot;, monospace; font-size: 11px; letter-spacing: 0.08em; color: oklch(0.5 0.02 80); display: var(--dc-eyebrow-display);"><b>CÓMO FUNCIONA</b></span>
+      </div>
+      <div class="dc-grid-3" style="display:grid;grid-template-columns:repeat(3,1fr);">
+        <div class="dc-border-r" style="padding:var(--dc-pad-m);border-right:1px solid var(--dc-border);">
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--dc-accent);">PASO 1</span>
+          <svg width="100%" height="72" viewBox="0 0 300 72" style="display:block;margin:14px 0 4px;overflow:visible;">
+            <line x1="0" y1="36" x2="300" y2="36" stroke="var(--dc-accent)" stroke-width="1" stroke-dasharray="3 4" opacity="0.5"></line>
+            <path d="M150 12 C138 30 132 40 132 49 a18 18 0 0 0 36 0 C168 40 162 30 150 12 Z" fill="none" stroke="oklch(0.35 0.02 80)" stroke-width="1.5"></path>
+            <path d="M141 50 a9 9 0 0 0 9 9" fill="none" stroke="var(--dc-accent)" stroke-width="1.5" stroke-linecap="round"></path>
+          </svg>
+          <h3 style="font-family:'Newsreader',serif;font-weight:500;font-size:20px;margin:10px 0 10px;">Muestra</h3>
+          <p style="font-size:15px;line-height:1.6;color:oklch(0.42 0.02 80);margin:0;">Se toma directamente en el punto de proceso, terreno, planta o punto de atención.</p>
+        </div>
+        <div style="padding:var(--dc-pad-m);border-right:1px solid var(--dc-border);">
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--dc-accent);">PASO 2</span>
+          <svg width="100%" height="72" viewBox="0 0 300 72" style="display:block;margin:14px 0 4px;overflow:visible;">
+            <line x1="0" y1="36" x2="300" y2="36" stroke="var(--dc-accent)" stroke-width="1" stroke-dasharray="3 4" opacity="0.5"></line>
+            <rect x="105" y="16" width="90" height="40" rx="3" fill="oklch(0.97 0.012 80)" stroke="oklch(0.35 0.02 80)" stroke-width="1.5"></rect>
+            <path d="M105 36 h20 q8 0 8 -8 t8 -8 h18 q8 0 8 8 t8 8 h20" fill="none" stroke="var(--dc-accent)" stroke-width="1.5"></path>
+            <circle cx="150" cy="36" r="3" fill="var(--dc-accent)"></circle>
+            <circle cx="126" cy="46" r="2" fill="oklch(0.35 0.02 80)"></circle>
+            <circle cx="174" cy="46" r="2" fill="oklch(0.35 0.02 80)"></circle>
+          </svg>
+          <h3 style="font-family:'Newsreader',serif;font-weight:500;font-size:20px;margin:10px 0 10px;">Chip</h3>
+          <p style="font-size:15px;line-height:1.6;color:oklch(0.42 0.02 80);margin:0;">El chip microfluídico intercambiable procesa la muestra según el analito buscado.</p>
+        </div>
+        <div style="padding:var(--dc-pad-m);">
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--dc-accent);">PASO 3</span>
+          <svg width="100%" height="72" viewBox="0 0 300 72" style="display:block;margin:14px 0 4px;overflow:visible;">
+            <line x1="0" y1="36" x2="300" y2="36" stroke="var(--dc-accent)" stroke-width="1" stroke-dasharray="3 4" opacity="0.5"></line>
+            <polyline points="100,56 124,56 136,20 152,50 164,32 176,44 200,44" fill="none" stroke="var(--dc-accent)" stroke-width="1.5" stroke-linejoin="round"></polyline>
+            <line x1="100" y1="60" x2="200" y2="60" stroke="oklch(0.35 0.02 80)" stroke-width="1"></line>
+            <line x1="100" y1="60" x2="100" y2="14" stroke="oklch(0.35 0.02 80)" stroke-width="1"></line>
+            <circle cx="136" cy="20" r="2.5" fill="oklch(0.35 0.02 80)"></circle>
+          </svg>
+          <h3 style="font-family:'Newsreader',serif;font-weight:500;font-size:20px;margin:10px 0 10px;">Resultado</h3>
+          <p style="font-size:15px;line-height:1.6;color:oklch(0.42 0.02 80);margin:0;">Lectura óptica y sensórica embebida entrega el resultado en el sitio.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Caso destacado -->
+    <div class="dc-grid-2-1" style="display:grid;grid-template-columns:2fr 1fr;">
+      <div class="dc-border-r" style="padding:var(--dc-pad-m2) 40px;border-right:1px solid var(--dc-border);background:#201a10;color:oklch(0.97 0.012 80);">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.08em;color:var(--dc-accent);">LAB-ON-A-CHIP</span>
+        <p style="font-family:'Newsreader',serif;font-size:22px;line-height:1.5;margin:16px 0 20px;font-weight:400;">Un chip del tamaño de una tarjeta reemplaza una sala de laboratorio completa. El análisis se hace donde ocurre el proceso no en un laboratorio externo&nbsp; y en minutos, no en días.</p>
+        <a href="#aplicaciones" style="font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:0.03em;color:var(--dc-accent-light);">Ver aplicaciones →</a>
+      </div>
+      <div style="background:#201a10;padding:20px;">
+        <div style="position:relative;width:100%;height:100%;min-height:200px;">
+          <image-slot id="caso-vitivinicultura" shape="rect" placeholder="Foto: viña, mosto o canal microfluídico"></image-slot>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PLATAFORMA -->
+  <section id="plataforma" data-screen-label="Plataforma" style="max-width:1280px;margin:0 auto;border-left:1px solid var(--dc-border);border-right:1px solid var(--dc-border);border-bottom:1px solid var(--dc-border);">
+    
+    <div style="padding:14px 40px;border-bottom:1px solid var(--dc-border);">
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.08em;color:oklch(0.5 0.02 80);display:var(--dc-eyebrow-display);"><b>PLATAFORMA</b></span>
+    </div><div style="padding:var(--dc-pad-l) 40px;">
+      <h2 style="font-family:'Newsreader',serif;font-weight:500;font-size:clamp(26px,3.2vw,36px);margin:0 0 36px;max-width:720px;line-height:1.15;">Una plataforma, no un instrumento cerrado</h2>
+      <svg width="100%" height="190" viewBox="0 0 1100 190" style="display:block;margin:0 0 48px;overflow:visible;font-family:'IBM Plex Mono',monospace;">
+        <line x1="215" y1="95" x2="335" y2="95" stroke="var(--dc-accent)" stroke-width="1.5" stroke-dasharray="4 5"></line>
+        <line x1="545" y1="95" x2="665" y2="95" stroke="var(--dc-accent)" stroke-width="1.5" stroke-dasharray="4 5"></line>
+        <line x1="875" y1="95" x2="935" y2="95" stroke="var(--dc-accent)" stroke-width="1.5" stroke-dasharray="4 5"></line>
+        <polygon points="335,95 327,91 327,99" fill="var(--dc-accent)"></polygon>
+        <polygon points="665,95 657,91 657,99" fill="var(--dc-accent)"></polygon>
+        <polygon points="935,95 927,91 927,99" fill="var(--dc-accent)"></polygon>
+        <g>
+          <rect x="35" y="45" width="180" height="100" rx="3" fill="none" stroke="oklch(0.35 0.02 80)" stroke-width="1.5"></rect>
+          <path d="M65 95 h30 q10 0 10 -12 t10 -12 h20 q10 0 10 12 t10 12 h30" fill="none" stroke="var(--dc-accent)" stroke-width="1.5"></path>
+          <circle cx="125" cy="95" r="3.5" fill="var(--dc-accent)"></circle>
+          <text x="125" y="168" text-anchor="middle" font-size="12" letter-spacing="1" fill="oklch(0.45 0.02 80)">CHIP MICROFLUÍDICO</text>
+        </g>
+        <g>
+          <rect x="355" y="45" width="180" height="100" rx="3" fill="none" stroke="oklch(0.35 0.02 80)" stroke-width="1.5"></rect>
+          <circle cx="405" cy="80" r="16" fill="none" stroke="oklch(0.35 0.02 80)" stroke-width="1.5"></circle>
+          <path d="M405 64 v32 M389 80 h32" stroke="oklch(0.35 0.02 80)" stroke-width="1.2"></path>
+          <path d="M450 68 h40 M450 80 h40 M450 92 h40" stroke="var(--dc-accent)" stroke-width="1.5" stroke-linecap="round"></path>
+          <rect x="450" y="104" width="40" height="14" rx="2" fill="none" stroke="oklch(0.35 0.02 80)" stroke-width="1.2"></rect>
+          <text x="445" y="168" text-anchor="middle" font-size="12" letter-spacing="1" fill="oklch(0.45 0.02 80)">CONTROL DE FLUIDOS</text>
+        </g>
+        <g>
+          <rect x="685" y="45" width="180" height="100" rx="3" fill="none" stroke="oklch(0.35 0.02 80)" stroke-width="1.5"></rect>
+          <circle cx="775" cy="88" r="22" fill="none" stroke="oklch(0.35 0.02 80)" stroke-width="1.5"></circle>
+          <circle cx="775" cy="88" r="10" fill="none" stroke="var(--dc-accent)" stroke-width="1.5"></circle>
+          <line x1="775" y1="54" x2="775" y2="64" stroke="var(--dc-accent)" stroke-width="1.5"></line>
+          <text x="775" y="168" text-anchor="middle" font-size="12" letter-spacing="1" fill="oklch(0.45 0.02 80)">SENSÓRICA ÓPTICA</text>
+        </g>
+        <g>
+          <rect x="955" y="45" width="110" height="100" rx="3" fill="oklch(0.22 0.02 80)"></rect>
+          <polyline points="975,115 990,115 998,75 1008,105 1016,88 1024,96 1045,96" fill="none" stroke="var(--dc-accent-light)" stroke-width="1.5" stroke-linejoin="round"></polyline>
+          <text x="1010" y="168" text-anchor="middle" font-size="12" letter-spacing="1" fill="oklch(0.45 0.02 80)">RESULTADO</text>
+        </g>
+      </svg>
+      <div class="dc-grid-2" style="display:grid;grid-template-columns:1fr 1fr;gap:56px;">
+        <div>
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--dc-accent);">¿QUÉ ES?</span>
+          <p style="font-size:16px;line-height:1.7;color:oklch(0.35 0.02 80);margin:12px 0 0;">µpontis integra chips microfluídicos, control de fluidos (válvulas, bombas de precisión, filtros) y sensórica embebida en una sola plataforma. No es un equipo diseñado para un solo uso: es una arquitectura que se adapta al analito, la matriz de muestra y el contexto de cada industria.</p>
+        </div>
+        <div>
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--dc-accent);">¿POR QUÉ MODULAR?</span>
+          <p style="font-size:16px;line-height:1.7;color:oklch(0.35 0.02 80);margin:12px 0 0;">Un mismo sistema base cambia de chip según lo que se necesite medir. La inversión en plataforma no se pierde cuando cambia el caso de uso — se extiende a nuevas aplicaciones sin rediseñar el sistema completo.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- APLICACIONES -->
+  <section id="aplicaciones" data-screen-label="Aplicaciones" style="max-width:1280px;margin:0 auto;border-left:1px solid var(--dc-border);border-right:1px solid var(--dc-border);border-bottom:1px solid var(--dc-border);">
+    <div style="padding:14px 40px;border-bottom:1px solid var(--dc-border);background:#201a10;">
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.08em;color:oklch(0.75 0.02 80);display:var(--dc-eyebrow-display);"><b>APLICACIONES</b></span>
+    </div>
+    <div class="dc-grid-2" style="display:grid;grid-template-columns:repeat(2,1fr);">
+      <div class="dc-border-r" style="padding:var(--dc-pad-m2) 40px;border-right:1px solid var(--dc-border);border-bottom:1px solid var(--dc-border);">
+        <div style="display:flex;align-items:center;justify-content:space-between;">
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--dc-accent);">01</span>
+          <svg width="44" height="44" viewBox="0 0 44 44"><path d="M14 10 h16 M18 10 v9 l-7 14 a4 4 0 0 0 3 6 h16 a4 4 0 0 0 3 -6 l-7 -14 v-9" fill="none" stroke="oklch(0.35 0.02 80)" stroke-width="1.5" stroke-linejoin="round"></path><path d="M13.5 27 h17" stroke="var(--dc-accent)" stroke-width="1.5"></path><circle cx="19" cy="31" r="1.8" fill="var(--dc-accent)"></circle><circle cx="25" cy="33" r="1.4" fill="var(--dc-accent)"></circle></svg>
+        </div>
+        <h3 style="font-family:'Newsreader',serif;font-weight:500;font-size:24px;margin:10px 0 14px;">Análisis Químico Industrial</h3>
+        <p style="font-size:15px;line-height:1.65;color:oklch(0.42 0.02 80);margin:0;">Monitoreo de calidad en línea (agua de proceso, control de contaminantes) con sensórica microfluídica integrada, para plantas que hoy dependen de análisis externo o equipos importados.</p>
+      </div>
+      <div style="padding:var(--dc-pad-m2) 40px;border-bottom:1px solid var(--dc-border);">
+        <div style="display:flex;align-items:center;justify-content:space-between;">
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--dc-accent);">02</span>
+          <svg width="44" height="44" viewBox="0 0 44 44"><ellipse cx="22" cy="16" rx="6" ry="9" transform="rotate(20 22 16)" fill="none" stroke="oklch(0.35 0.02 80)" stroke-width="1.5"></ellipse><ellipse cx="16" cy="29" rx="6" ry="9" transform="rotate(-15 16 29)" fill="none" stroke="oklch(0.35 0.02 80)" stroke-width="1.5"></ellipse><ellipse cx="29" cy="29" rx="6" ry="9" transform="rotate(45 29 29)" fill="none" stroke="var(--dc-accent)" stroke-width="1.5"></ellipse></svg>
+        </div>
+        <h3 style="font-family:'Newsreader',serif;font-weight:500;font-size:24px;margin:10px 0 14px;">Seguridad Alimentaria / Agroexportación</h3>
+        <p style="font-size:15px;line-height:1.65;color:oklch(0.42 0.02 80);margin:0;">Detección rápida de micotoxinas (aflatoxinas, ocratoxinas, fumonisinas) en frutos secos, granos, frutas deshidratadas y lácteos destinados a exportación, sin depender de laboratorio externo.</p>
+      </div>
+      <div style="padding:var(--dc-pad-m2) 40px;border-right:1px solid var(--dc-border);">
+        <div style="display:flex;align-items:center;justify-content:space-between;">
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--dc-accent);">03</span>
+          <svg width="44" height="44" viewBox="0 0 44 44"><rect x="15" y="8" width="14" height="28" rx="7" fill="none" stroke="oklch(0.35 0.02 80)" stroke-width="1.5"></rect><path d="M15 24 h14" stroke="oklch(0.35 0.02 80)" stroke-width="1.2"></path><path d="M22 27 c-3 4 -3 6 0 6 s3 -2 0 -6 Z" fill="var(--dc-accent)"></path></svg>
+        </div>
+        <h3 style="font-family:'Newsreader',serif;font-weight:500;font-size:24px;margin:10px 0 14px;">Diagnóstico</h3>
+        <p style="font-size:15px;line-height:1.65;color:oklch(0.42 0.02 80);margin:0;">Testeo point-of-care de bajo volumen de muestra para análisis clínico y ambiental, portátil y sin infraestructura de laboratorio centralizado.</p>
+      </div>
+      <div style="padding:var(--dc-pad-m2) 40px;">
+        <div style="display:flex;align-items:center;justify-content:space-between;">
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--dc-accent);">04</span>
+          <svg width="44" height="44" viewBox="0 0 44 44"><circle cx="17" cy="20" r="5" fill="none" stroke="oklch(0.35 0.02 80)" stroke-width="1.5"></circle><circle cx="27" cy="20" r="5" fill="none" stroke="oklch(0.35 0.02 80)" stroke-width="1.5"></circle><circle cx="22" cy="29" r="5" fill="none" stroke="var(--dc-accent)" stroke-width="1.5"></circle><path d="M22 15 q0 -8 8 -9" fill="none" stroke="oklch(0.35 0.02 80)" stroke-width="1.5" stroke-linecap="round"></path></svg>
+        </div>
+        <h3 style="font-family:'Newsreader',serif;font-weight:500;font-size:24px;margin:10px 0 14px;">Vitivinicultura</h3>
+        <p style="font-size:15px;line-height:1.65;color:oklch(0.42 0.02 80);margin:0;">Detección temprana de compuestos no deseados (micotoxinas, ocratoxina A) en mosto y vino antes de exportar, y caracterización de mosto para optimizar el uso de materia prima en distintas condiciones de prefermentación.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section id="contacto" data-screen-label="Contacto" style="max-width:1280px;margin:0 auto;border-left:1px solid var(--dc-border);border-right:1px solid var(--dc-border);border-bottom:1px solid var(--dc-border);">
+    <div style="padding:14px 40px;border-bottom:1px solid var(--dc-border);background:#201a10;">
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.08em;color:oklch(0.75 0.02 80);display:var(--dc-eyebrow-display);"><b>CONTACTO</b></span>
+    </div>
+    <div class="dc-grid-2" style="display:grid;grid-template-columns:1fr 1fr;">
+      <div class="dc-border-r" style="padding:var(--dc-pad-l) 40px;border-right:1px solid var(--dc-border);display:flex;flex-direction:column;justify-content:center;">
+        <h2 style="font-family:'Newsreader',serif;font-weight:500;font-size:clamp(28px,3.4vw,38px);margin:0 0 18px;line-height:1.15;">Conversemos sobre tu caso</h2>
+        <p style="font-size:16px;line-height:1.6;color:oklch(0.42 0.02 80);margin:0;max-width:420px;">Cuéntanos tu problema, proceso, producto y evaluamos tu propuesta.</p>
+      </div>
+      <div style="padding:var(--dc-pad-l) 40px;">
+        <sc-if value="{{ formSubmitted }}" hint-placeholder-val="{{ false }}">
+          <div style="border:1px solid oklch(0.22 0.02 80 / 0.15);padding:32px;">
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--dc-accent);">RECIBIDO</span>
+            <p style="font-family:'Newsreader',serif;font-size:20px;margin:12px 0 0;line-height:1.5;">Gracias por escribirnos. Un miembro del equipo revisará tu caso y te contactará directamente — no agendamos demos automáticas.</p>
+          </div>
+        </sc-if>
+        <sc-if value="{{ formNotSubmitted }}" hint-placeholder-val="{{ true }}">
+          <form onSubmit="{{ handleSubmit }}" style="display:flex;flex-direction:column;gap:18px;">
+            <div style="display:flex;flex-direction:column;gap:6px;">
+              <label style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.05em;color:oklch(0.5 0.02 80);">NOMBRE</label>
+              <input name="nombre" required="true" style="border:none;border-bottom:1px solid oklch(0.22 0.02 80 / 0.3);background:transparent;padding:10px 2px;font-size:15px;color:oklch(0.22 0.02 80);outline:none;">
+            </div>
+            <div style="display:flex;flex-direction:column;gap:6px;">
+              <label style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.05em;color:oklch(0.5 0.02 80);">EMPRESA</label>
+              <input name="empresa" style="border:none;border-bottom:1px solid oklch(0.22 0.02 80 / 0.3);background:transparent;padding:10px 2px;font-size:15px;color:oklch(0.22 0.02 80);outline:none;">
+            </div>
+            <div style="display:flex;flex-direction:column;gap:6px;">
+              <label style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.05em;color:oklch(0.5 0.02 80);">SECTOR</label>
+              <input name="sector" placeholder="Ej. Vitivinicultura, agroexportación, diagnóstico…" style="border:none;border-bottom:1px solid oklch(0.22 0.02 80 / 0.3);background:transparent;padding:10px 2px;font-size:15px;color:oklch(0.22 0.02 80);outline:none;">
+            </div>
+            <div style="display:flex;flex-direction:column;gap:6px;">
+              <label style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.05em;color:oklch(0.5 0.02 80);">MENSAJE</label>
+              <textarea name="mensaje" rows="4" required="true" style="border:none;border-bottom:1px solid oklch(0.22 0.02 80 / 0.3);background:transparent;padding:10px 2px;font-size:15px;color:oklch(0.22 0.02 80);outline:none;resize:vertical;font-family:'IBM Plex Sans',sans-serif;"></textarea>
+            </div>
+            <button type="submit" style="margin-top:10px;align-self:flex-start;font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:0.03em;padding:14px 28px;border-radius:6px;background:#201a10;color:oklch(0.97 0.012 80);border:none;cursor:pointer;">Habla con un experto</button>
+          </form>
+        </sc-if>
+      </div>
+    </div>
+  </section>
+
+  <footer style="max-width:1280px;margin:0 auto;padding:24px 40px;display:flex;justify-content:space-between;align-items:center;border-left:1px solid var(--dc-border);border-right:1px solid var(--dc-border);border-bottom:1px solid var(--dc-border);background:#201a10;">
+    <div style="display:flex;flex-direction:column;align-items:flex-start;gap:4px;">
+      <span style="font-family:'IBM Plex Sans',sans-serif;font-weight:700;font-size:17px;letter-spacing:-0.01em;color:#F9F4EC;">µpontis</span>
+      <svg width="60" height="8" viewBox="0 0 210 26"><line x1="10" y1="14" x2="75" y2="14" stroke="#E14D28" stroke-width="2.5" stroke-linecap="round"></line><path d="M75 14 C75 3 85 3 85 14 C85 25 95 25 95 14 C95 3 105 3 105 14 C105 25 115 25 115 14 C115 3 125 3 125 14 C125 25 135 25 135 14" fill="none" stroke="#E14D28" stroke-width="2.5" stroke-linecap="round"></path><line x1="135" y1="14" x2="200" y2="14" stroke="#E14D28" stroke-width="2.5" stroke-linecap="round"></line></svg>
+    </div>
+    <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#F9F4EC;opacity:0.6;">upontis.net</span>
+  </footer>
+
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;accentColor&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#c2572e&quot;,&quot;options&quot;:[&quot;#c2572e&quot;,&quot;#0f7a6b&quot;,&quot;#2f6fed&quot;,&quot;#7a4fd1&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Tema&quot;},&quot;chrome&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;tecnico&quot;,&quot;options&quot;:[&quot;tecnico&quot;,&quot;editorial&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Tema&quot;},&quot;density&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;compacta&quot;,&quot;options&quot;:[&quot;compacta&quot;,&quot;espaciosa&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Tema&quot;}}">
+class Component extends DCLogic {
+  state = { mobileOpen: false, formSubmitted: false };
+  toggleMobileNav = () => this.setState(s => ({ mobileOpen: !s.mobileOpen }));
+  closeMobileNav = () => this.setState({ mobileOpen: false });
+  handleSubmit = (e) => {
+    e.preventDefault();
+    this.setState({ formSubmitted: true });
+  };
+  fluidCanvasRef = React.createRef();
+  componentDidMount() {
+    const canvas = this.fluidCanvasRef.current;
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+    const W = canvas.width, H = canvas.height;
+    // Gotas de aceite (acento, cálidas) suspendidas en agua — inmiscibles, bordes definidos
+    const drops = Array.from({ length: 11 }, (_, i) => ({
+      x: Math.random() * W,
+      y: Math.random() * H,
+      r: 9 + Math.random() * 17,
+      vx: (Math.random() - 0.5) * 0.18,
+      vy: -(0.12 + Math.random() * 0.28),
+      wob: Math.random() * Math.PI * 2,
+      oil: i % 3 !== 2, // 2 de cada 3 son aceite; el resto burbujas de agua/aire
+    }));
+    let raf;
+    const getAccent = () => getComputedStyle(document.documentElement).getPropertyValue('--dc-accent').trim() || '#c2572e';
+    const draw = (t) => {
+      const time = t * 0.001;
+      // agua: fondo frío translúcido
+      const grad = ctx.createLinearGradient(0, 0, 0, H);
+      grad.addColorStop(0, 'oklch(0.93 0.015 220)');
+      grad.addColorStop(1, 'oklch(0.86 0.025 230)');
+      ctx.fillStyle = grad;
+      ctx.fillRect(0, 0, W, H);
+      const accent = getAccent();
+      drops.forEach((d) => {
+        d.x += d.vx + 0.12 * Math.sin(time * 1.4 + d.wob);
+        d.y += d.vy;
+        if (d.y < -d.r) { d.y = H + d.r; d.x = Math.random() * W; }
+        if (d.x < -d.r) d.x = W + d.r;
+        if (d.x > W + d.r) d.x = -d.r;
+        const squish = 1 + 0.06 * Math.sin(time * 3 + d.wob);
+        ctx.save();
+        ctx.translate(d.x, d.y);
+        ctx.scale(1 / squish, squish);
+        if (d.oil) {
+          const og = ctx.createRadialGradient(-d.r * 0.3, -d.r * 0.35, d.r * 0.1, 0, 0, d.r);
+          og.addColorStop(0, 'color-mix(in srgb, ' + accent + ' 55%, white)');
+          og.addColorStop(0.7, accent);
+          og.addColorStop(1, 'color-mix(in srgb, ' + accent + ' 80%, black)');
+          ctx.fillStyle = og;
+          ctx.globalAlpha = 0.9;
+        } else {
+          const wg = ctx.createRadialGradient(-d.r * 0.3, -d.r * 0.35, d.r * 0.1, 0, 0, d.r);
+          wg.addColorStop(0, 'oklch(0.99 0.005 220 / 0.9)');
+          wg.addColorStop(0.75, 'oklch(0.93 0.02 225 / 0.35)');
+          wg.addColorStop(1, 'oklch(0.7 0.04 230 / 0.55)');
+          ctx.fillStyle = wg;
+          ctx.globalAlpha = 0.85;
+        }
+        ctx.beginPath();
+        ctx.arc(0, 0, d.r, 0, Math.PI * 2);
+        ctx.fill();
+        // brillo especular
+        ctx.globalAlpha = d.oil ? 0.5 : 0.7;
+        ctx.fillStyle = 'white';
+        ctx.beginPath();
+        ctx.ellipse(-d.r * 0.35, -d.r * 0.4, d.r * 0.18, d.r * 0.1, -0.6, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.restore();
+        ctx.globalAlpha = 1;
+      });
+      raf = requestAnimationFrame(draw);
+    };
+    raf = requestAnimationFrame(draw);
+    this._stopFluid = () => cancelAnimationFrame(raf);
+  }
+  componentWillUnmount() {
+    if (this._stopFluid) this._stopFluid();
+  }
+  renderVals() {
+    const accent = this.props.accentColor ?? '#c2572e';
+    const chrome = this.props.chrome ?? 'tecnico';
+    const density = this.props.density ?? 'compacta';
+    const isEditorial = chrome === 'editorial';
+    const isEspaciosa = density === 'espaciosa';
+    const themeVars = [
+      `--dc-accent:${accent}`,
+      `--dc-accent-hover:color-mix(in srgb, ${accent} 85%, black)`,
+      `--dc-accent-light:color-mix(in srgb, ${accent} 78%, white)`,
+      `--dc-border:${isEditorial ? 'oklch(0.22 0.02 80 / 0.035)' : 'oklch(0.22 0.02 80 / 0.12)'}`,
+      `--dc-eyebrow-display:${isEditorial ? 'none' : 'block'}`,
+      `--dc-chip-display:${isEditorial ? 'none' : 'block'}`,
+      `--dc-pad-l:${isEspaciosa ? '96px' : '60px'}`,
+      `--dc-pad-m:${isEspaciosa ? '56px' : '40px'}`,
+      `--dc-pad-m2:${isEspaciosa ? '64px' : '44px'}`,
+    ].join(';') + ';';
+    return {
+      fluidCanvasRef: this.fluidCanvasRef,
+      themeVars,
+      mobileOpen: this.state.mobileOpen,
+      mobileMenuLabel: this.state.mobileOpen ? 'CERRAR' : 'MENÚ',
+      toggleMobileNav: this.toggleMobileNav,
+      closeMobileNav: this.closeMobileNav,
+      formSubmitted: this.state.formSubmitted,
+      formNotSubmitted: !this.state.formSubmitted,
+      handleSubmit: this.handleSubmit,
+    };
+  }
+}
+
+</script>
+</body>
+</html>

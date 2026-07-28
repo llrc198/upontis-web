@@ -1,0 +1,71 @@
+{
+  "proyecto": "DeepControl",
+  "dominio": "deepcontrol.net",
+  "formato": "one-page scroll — nav ancla a cada sección, sin páginas separadas",
+  "audiencia": "B2B técnica: enólogos, laboratorios, investigadores, jefes de proyecto que buscan una solución analítica en Google",
+  "mission": "Llevamos la precisión del laboratorio directamente al proceso: plataformas microfluídicas modulares que dan a las industrias latinoamericanas el control analítico que siempre estuvo fuera de su alcance.",
+  "nav": ["Inicio", "Plataforma", "Aplicaciones", "Nosotros", "Contacto"],
+  "secciones": {
+    "inicio": {
+      "hero_headline": "Llevamos la precisión del laboratorio directamente al proceso.",
+      "hero_subheadline": "Plataforma microfluídica modular para industrias latinoamericanas que necesitan control analítico propio, sin depender de un laboratorio centralizado.",
+      "pilares_valor": [
+        {"titulo": "Modularidad", "texto": "Chips intercambiables. Un mismo sistema, múltiples analitos y aplicaciones."},
+        {"titulo": "Portabilidad", "texto": "El análisis se hace donde ocurre el proceso, no donde está el laboratorio."},
+        {"titulo": "Velocidad", "texto": "Resultados en el sitio, sin esperar días por un tercero."}
+      ],
+      "como_funciona": [
+        {"paso": "Muestra", "texto": "Se toma directamente en el punto de proceso — viña, planta, punto de atención."},
+        {"paso": "Chip", "texto": "El chip microfluídico intercambiable procesa la muestra según el analito buscado."},
+        {"paso": "Resultado", "texto": "Lectura óptica y sensórica embebida entrega el resultado en el sitio."}
+      ],
+      "caso_destacado": {
+        "texto": "Hoy estamos desarrollando esta plataforma para vitivinicultura: detección temprana de compuestos no deseados en mosto y vino antes de exportar.",
+        "link_texto": "Ver aplicaciones",
+        "link_destino": "#aplicaciones"
+      },
+      "cta": {"texto": "Conversemos sobre tu caso", "destino": "#contacto"}
+    },
+    "plataforma": {
+      "titulo": "Una plataforma, no un instrumento cerrado",
+      "que_es": "DeepControl integra chips microfluídicos, control de fluidos (válvulas, bombas de precisión, filtros) y sensórica embebida en una sola plataforma modular. No es un equipo diseñado para un solo uso: es una arquitectura que se adapta al analito, la matriz de muestra y el contexto de cada industria.",
+      "por_que_modular": "Un mismo sistema base cambia de chip según lo que se necesite medir. La inversión en plataforma no se pierde cuando cambia el caso de uso — se extiende a nuevas aplicaciones sin rediseñar el sistema completo.",
+      "restricciones_editoriales": "No mencionar proveedores ni cadena de suministro. No incluir métricas de producto no validadas (límites de detección, tiempos exactos)."
+    },
+    "aplicaciones": {
+      "estado": "copy final, listo para publicar",
+      "categorias": [
+        {
+          "titulo": "Vitivinicultura",
+          "descripcion": "Detección temprana de compuestos no deseados (micotoxinas, ocratoxina A) en mosto y vino antes de exportar, y caracterización de mosto para optimizar el uso de materia prima en distintas condiciones de prefermentación."
+        },
+        {
+          "titulo": "Seguridad Alimentaria / Agroexportación",
+          "descripcion": "Detección rápida de micotoxinas (aflatoxinas, ocratoxinas, fumonisinas) en frutos secos, granos, frutas deshidratadas y lácteos destinados a exportación, sin depender de laboratorio externo."
+        },
+        {
+          "titulo": "Diagnóstico",
+          "descripcion": "Testeo point-of-care de bajo volumen de muestra para análisis clínico y ambiental, portátil y sin infraestructura de laboratorio centralizado."
+        },
+        {
+          "titulo": "Análisis Químico Industrial",
+          "descripcion": "Monitoreo de calidad en línea (agua de proceso, control de contaminantes) con sensórica microfluídica integrada, para plantas que hoy dependen de análisis externo o equipos importados."
+        }
+      ]
+    },
+    "nosotros": {
+      "historia": "DeepControl nace de una pregunta simple: ¿por qué el análisis de precisión sigue siendo un privilegio de quienes pueden importar infraestructura de laboratorio? Latinoamérica produce vino, alimentos y diagnósticos de clase mundial, pero depende de instrumentos y soporte técnico que vienen de afuera. Construimos la alternativa: una plataforma modular pensada y soportada localmente.",
+      "equipo": [
+        {"nombre": "Leonardo", "rol": "Comercial y Estrategia"},
+        {"nombre": "Daniel", "rol": "Producto y Tecnología"}
+      ],
+      "restricciones_editoriales": "No mencionar estructura societaria ni shareholder loans."
+    },
+    "contacto": {
+      "headline": "Conversemos sobre tu caso",
+      "subtexto": "Cuéntanos qué necesitas controlar y evaluamos si la plataforma aplica a tu operación.",
+      "formulario_campos": ["nombre", "empresa", "sector", "mensaje"],
+      "restricciones_editoriales": "Sin agendamiento automático de demo — no hay pilotos activos aún."
+    }
+  }
+}

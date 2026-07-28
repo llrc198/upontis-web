@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style data-omelette-print-defaults>
+@media print {
+  @page { margin: 0.5in; }
+  h1, h2, h3, h4, h5, h6 { break-after: avoid; }
+  figure, table, pre, blockquote, img, svg, tr, [class~="card" i] { break-inside: avoid; }
+  img, svg { max-width: 100%; }
+  p { orphans: 3; widows: 3; }
+}
+</style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+  <style>
+    body{margin:0;background:oklch(0.97 0.012 80);}
+    a{color:oklch(0.55 0.18 35);text-decoration:none;}
+    a:hover{color:oklch(0.48 0.18 35);}
+    ::selection{background:oklch(0.62 0.19 35 / 0.25);}
+    input,textarea{font-family:'IBM Plex Sans',sans-serif;}
+    input::placeholder,textarea::placeholder{color:oklch(0.55 0.02 80);}
+  </style>
+</helmet>
+
+<div style="font-family:'IBM Plex Sans',sans-serif;color:oklch(0.22 0.02 80);background:oklch(0.97 0.012 80);width:100%;overflow-x:hidden;">
+
+  <header style="position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 40px;height:72px;background:oklch(0.97 0.012 80 / 0.94);backdrop-filter:blur(8px);border-bottom:1px solid oklch(0.22 0.02 80 / 0.12);">
+    <a href="#inicio" style="font-family:'IBM Plex Mono',monospace;font-size:15px;font-weight:500;letter-spacing:0.04em;color:oklch(0.22 0.02 80);">DEEPCONTROL</a>
+    <nav style="display:none;gap:36px;align-items:center;" class="dc-desktop-nav">
+      <a href="#inicio" style="font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:0.03em;color:oklch(0.22 0.02 80);">INICIO</a>
+      <a href="#plataforma" style="font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:0.03em;color:oklch(0.22 0.02 80);">PLATAFORMA</a>
+      <a href="#aplicaciones" style="font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:0.03em;color:oklch(0.22 0.02 80);">APLICACIONES</a>
+      <a href="#nosotros" style="font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:0.03em;color:oklch(0.22 0.02 80);">NOSOTROS</a>
+      <a href="#contacto" style="font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:0.03em;padding:8px 18px;border:1px solid oklch(0.22 0.02 80);color:oklch(0.22 0.02 80);">CONTACTO</a>
+    </nav>
+    <button onClick="{{ toggleMobileNav }}" class="dc-hamburger" style="background:none;border:none;font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:0.03em;color:oklch(0.22 0.02 80);cursor:pointer;">{{ mobileMenuLabel }}</button>
+  </header>
+
+  <helmet>
+    <style>
+      @media (min-width: 860px){ .dc-desktop-nav{ display:flex !important; } .dc-hamburger{ display:none !important; } }
+    </style>
+  </helmet>
+
+  <sc-if value="{{ mobileOpen }}" hint-placeholder-val="{{ false }}">
+    <nav style="position:fixed;top:72px;left:0;right:0;z-index:99;display:flex;flex-direction:column;background:oklch(0.97 0.012 80);border-bottom:1px solid oklch(0.22 0.02 80 / 0.1);padding:8px 40px 20px;">
+      <a href="#inicio" onClick="{{ closeMobileNav }}" style="font-family:'IBM Plex Mono',monospace;font-size:14px;padding:12px 0;border-bottom:1px solid oklch(0.22 0.02 80 / 0.08);">INICIO</a>
+      <a href="#plataforma" onClick="{{ closeMobileNav }}" style="font-family:'IBM Plex Mono',monospace;font-size:14px;padding:12px 0;border-bottom:1px solid oklch(0.22 0.02 80 / 0.08);">PLATAFORMA</a>
+      <a href="#aplicaciones" onClick="{{ closeMobileNav }}" style="font-family:'IBM Plex Mono',monospace;font-size:14px;padding:12px 0;border-bottom:1px solid oklch(0.22 0.02 80 / 0.08);">APLICACIONES</a>
+      <a href="#nosotros" onClick="{{ closeMobileNav }}" style="font-family:'IBM Plex Mono',monospace;font-size:14px;padding:12px 0;border-bottom:1px solid oklch(0.22 0.02 80 / 0.08);">NOSOTROS</a>
+      <a href="#contacto" onClick="{{ closeMobileNav }}" style="font-family:'IBM Plex Mono',monospace;font-size:14px;padding:12px 0;">CONTACTO</a>
+    </nav>
+  </sc-if>
+
+  <!-- HERO -->
+  <section id="inicio" data-screen-label="Hero" style="padding-top:72px;max-width:1280px;margin:0 auto;border-left:1px solid oklch(0.22 0.02 80 / 0.12);border-right:1px solid oklch(0.22 0.02 80 / 0.12);">
+    <div style="display:flex;justify-content:space-between;padding:16px 40px;border-bottom:1px solid oklch(0.22 0.02 80 / 0.12);">
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.08em;color:oklch(0.5 0.02 80);">PLATAFORMA MICROFLUÍDICA MODULAR</span>
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.08em;color:oklch(0.5 0.02 80);">SCROLL ↓</span>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid oklch(0.22 0.02 80 / 0.12);">
+      <div style="border-right:1px solid oklch(0.22 0.02 80 / 0.12);display:flex;align-items:center;justify-content:center;padding:60px 20px;">
+        <div style="position:relative;width:min(38vw,220px);height:min(38vw,220px);">
+          <div style="position:absolute;inset:0;border:2px solid oklch(0.62 0.19 35);border-radius:2px;transform:rotate(6deg);"></div>
+          <div style="position:absolute;inset:26px;border:2px solid oklch(0.22 0.02 80 / 0.45);border-radius:2px;transform:rotate(-8deg);"></div>
+          <div style="position:absolute;inset:52px;border:2px solid oklch(0.62 0.19 35 / 0.55);border-radius:2px;transform:rotate(18deg);"></div>
+          <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.06em;color:oklch(0.5 0.02 80);text-align:center;">CHIP<br/>MODULAR</div>
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;justify-content:center;padding:56px 44px;">
+        <h1 style="font-family:'Newsreader',serif;font-weight:500;font-size:clamp(30px,4vw,46px);line-height:1.12;margin:0 0 24px;letter-spacing:-0.01em;">Llevamos la precisión del laboratorio directamente al proceso.</h1>
+        <p style="font-size:17px;line-height:1.6;color:oklch(0.42 0.02 80);margin:0 0 32px;">Plataforma microfluídica modular para industrias latinoamericanas que necesitan control analítico propio, sin depender de un laboratorio centralizado.</p>
+        <a href="#contacto" style="align-self:flex-start;font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:0.03em;padding:14px 28px;background:oklch(0.22 0.02 80);color:oklch(0.97 0.012 80);">Conversemos sobre tu caso</a>
+      </div>
+    </div>
+
+    <!-- Pilares de valor -->
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);border-bottom:1px solid oklch(0.22 0.02 80 / 0.12);">
+      <div style="grid-column:1 / -1;padding:14px 40px;border-bottom:1px solid oklch(0.22 0.02 80 / 0.12);">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.08em;color:oklch(0.5 0.02 80);">PILARES DE VALOR</span>
+      </div>
+      <div style="padding:40px;border-right:1px solid oklch(0.22 0.02 80 / 0.12);">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:oklch(0.62 0.19 35);">01</span>
+        <h3 style="font-family:'Newsreader',serif;font-weight:500;font-size:22px;margin:10px 0 10px;">Modularidad</h3>
+        <p style="font-size:15px;line-height:1.6;color:oklch(0.42 0.02 80);margin:0;">Chips intercambiables. Un mismo sistema, múltiples analitos y aplicaciones.</p>
+      </div>
+      <div style="padding:40px;border-right:1px solid oklch(0.22 0.02 80 / 0.12);">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:oklch(0.62 0.19 35);">02</span>
+        <h3 style="font-family:'Newsreader',serif;font-weight:500;font-size:22px;margin:10px 0 10px;">Portabilidad</h3>
+        <p style="font-size:15px;line-height:1.6;color:oklch(0.42 0.02 80);margin:0;">El análisis se hace donde ocurre el proceso, no donde está el laboratorio.</p>
+      </div>
+      <div style="padding:40px;">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:oklch(0.62 0.19 35);">03</span>
+        <h3 style="font-family:'Newsreader',serif;font-weight:500;font-size:22px;margin:10px 0 10px;">Velocidad</h3>
+        <p style="font-size:15px;line-height:1.6;color:oklch(0.42 0.02 80);margin:0;">Resultados en el sitio, sin esperar días por un tercero.</p>
+      </div>
+    </div>
+
+    <!-- Cómo funciona -->
+    <div style="border-bottom:1px solid oklch(0.22 0.02 80 / 0.12);">
+      <div style="padding:14px 40px;border-bottom:1px solid oklch(0.22 0.02 80 / 0.12);">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.08em;color:oklch(0.5 0.02 80);">CÓMO FUNCIONA</span>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);">
+        <div style="padding:40px;border-right:1px solid oklch(0.22 0.02 80 / 0.12);">
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:oklch(0.62 0.19 35);">PASO 1</span>
+          <h3 style="font-family:'Newsreader',serif;font-weight:500;font-size:20px;margin:10px 0 10px;">Muestra</h3>
+          <p style="font-size:15px;line-height:1.6;color:oklch(0.42 0.02 80);margin:0;">Se toma directamente en el punto de proceso — viña, planta, punto de atención.</p>
+        </div>
+        <div style="padding:40px;border-right:1px solid oklch(0.22 0.02 80 / 0.12);">
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:oklch(0.62 0.19 35);">PASO 2</span>
+          <h3 style="font-family:'Newsreader',serif;font-weight:500;font-size:20px;margin:10px 0 10px;">Chip</h3>
+          <p style="font-size:15px;line-height:1.6;color:oklch(0.42 0.02 80);margin:0;">El chip microfluídico intercambiable procesa la muestra según el analito buscado.</p>
+        </div>
+        <div style="padding:40px;">
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:oklch(0.62 0.19 35);">PASO 3</span>
+          <h3 style="font-family:'Newsreader',serif;font-weight:500;font-size:20px;margin:10px 0 10px;">Resultado</h3>
+          <p style="font-size:15px;line-height:1.6;color:oklch(0.42 0.02 80);margin:0;">Lectura óptica y sensórica embebida entrega el resultado en el sitio.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Caso destacado -->
+    <div style="display:grid;grid-template-columns:2fr 1fr;">
+      <div style="padding:44px 40px;border-right:1px solid oklch(0.22 0.02 80 / 0.12);background:oklch(0.22 0.02 80);color:oklch(0.97 0.012 80);">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.08em;color:oklch(0.62 0.19 35);">CASO DESTACADO — VITIVINICULTURA</span>
+        <p style="font-family:'Newsreader',serif;font-size:22px;line-height:1.5;margin:16px 0 20px;font-weight:400;">Hoy estamos desarrollando esta plataforma para vitivinicultura: detección temprana de compuestos no deseados en mosto y vino antes de exportar.</p>
+        <a href="#aplicaciones" style="font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:0.03em;color:oklch(0.7 0.19 35);">Ver aplicaciones →</a>
+      </div>
+      <div style="background:oklch(0.22 0.02 80);display:flex;align-items:center;justify-content:center;padding:20px;">
+        <div style="width:100%;height:100%;min-height:140px;background:repeating-linear-gradient(135deg, oklch(0.3 0.02 80) 0 10px, oklch(0.27 0.02 80) 10px 20px);display:flex;align-items:center;justify-content:center;">
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:oklch(0.7 0.02 80);text-align:center;padding:12px;">FOTO / DIAGRAMA<br/>VIÑA · MOSTO</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PLATAFORMA -->
+  <section id="plataforma" data-screen-label="Plataforma" style="max-width:1280px;margin:0 auto;border-left:1px solid oklch(0.22 0.02 80 / 0.12);border-right:1px solid oklch(0.22 0.02 80 / 0.12);border-bottom:1px solid oklch(0.22 0.02 80 / 0.12);">
+    <div style="padding:14px 40px;border-bottom:1px solid oklch(0.22 0.02 80 / 0.12);">
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.08em;color:oklch(0.5 0.02 80);">PLATAFORMA</span>
+    </div>
+    <div style="padding:60px 40px;">
+      <h2 style="font-family:'Newsreader',serif;font-weight:500;font-size:clamp(26px,3.2vw,36px);margin:0 0 36px;max-width:720px;line-height:1.15;">Una plataforma, no un instrumento cerrado</h2>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:56px;">
+        <div>
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:oklch(0.62 0.19 35);">QUÉ ES</span>
+          <p style="font-size:16px;line-height:1.7;color:oklch(0.35 0.02 80);margin:12px 0 0;">DeepControl integra chips microfluídicos, control de fluidos (válvulas, bombas de precisión, filtros) y sensórica embebida en una sola plataforma modular. No es un equipo diseñado para un solo uso: es una arquitectura que se adapta al analito, la matriz de muestra y el contexto de cada industria.</p>
+        </div>
+        <div>
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:oklch(0.62 0.19 35);">POR QUÉ MODULAR</span>
+          <p style="font-size:16px;line-height:1.7;color:oklch(0.35 0.02 80);margin:12px 0 0;">Un mismo sistema base cambia de chip según lo que se necesite medir. La inversión en plataforma no se pierde cuando cambia el caso de uso — se extiende a nuevas aplicaciones sin rediseñar el sistema completo.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- APLICACIONES -->
+  <section id="aplicaciones" data-screen-label="Aplicaciones" style="max-width:1280px;margin:0 auto;border-left:1px solid oklch(0.22 0.02 80 / 0.12);border-right:1px solid oklch(0.22 0.02 80 / 0.12);border-bottom:1px solid oklch(0.22 0.02 80 / 0.12);">
+    <div style="padding:14px 40px;border-bottom:1px solid oklch(0.22 0.02 80 / 0.12);">
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.08em;color:oklch(0.5 0.02 80);">APLICACIONES</span>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(2,1fr);">
+      <div style="padding:44px 40px;border-right:1px solid oklch(0.22 0.02 80 / 0.12);border-bottom:1px solid oklch(0.22 0.02 80 / 0.12);">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:oklch(0.62 0.19 35);">01</span>
+        <h3 style="font-family:'Newsreader',serif;font-weight:500;font-size:24px;margin:10px 0 14px;">Vitivinicultura</h3>
+        <p style="font-size:15px;line-height:1.65;color:oklch(0.42 0.02 80);margin:0;">Detección temprana de compuestos no deseados (micotoxinas, ocratoxina A) en mosto y vino antes de exportar, y caracterización de mosto para optimizar el uso de materia prima en distintas condiciones de prefermentación.</p>
+      </div>
+      <div style="padding:44px 40px;border-bottom:1px solid oklch(0.22 0.02 80 / 0.12);">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:oklch(0.62 0.19 35);">02</span>
+        <h3 style="font-family:'Newsreader',serif;font-weight:500;font-size:24px;margin:10px 0 14px;">Seguridad Alimentaria / Agroexportación</h3>
+        <p style="font-size:15px;line-height:1.65;color:oklch(0.42 0.02 80);margin:0;">Detección rápida de micotoxinas (aflatoxinas, ocratoxinas, fumonisinas) en frutos secos, granos, frutas deshidratadas y lácteos destinados a exportación, sin depender de laboratorio externo.</p>
+      </div>
+      <div style="padding:44px 40px;border-right:1px solid oklch(0.22 0.02 80 / 0.12);">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:oklch(0.62 0.19 35);">03</span>
+        <h3 style="font-family:'Newsreader',serif;font-weight:500;font-size:24px;margin:10px 0 14px;">Diagnóstico</h3>
+        <p style="font-size:15px;line-height:1.65;color:oklch(0.42 0.02 80);margin:0;">Testeo point-of-care de bajo volumen de muestra para análisis clínico y ambiental, portátil y sin infraestructura de laboratorio centralizado.</p>
+      </div>
+      <div style="padding:44px 40px;">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:oklch(0.62 0.19 35);">04</span>
+        <h3 style="font-family:'Newsreader',serif;font-weight:500;font-size:24px;margin:10px 0 14px;">Análisis Químico Industrial</h3>
+        <p style="font-size:15px;line-height:1.65;color:oklch(0.42 0.02 80);margin:0;">Monitoreo de calidad en línea (agua de proceso, control de contaminantes) con sensórica microfluídica integrada, para plantas que hoy dependen de análisis externo o equipos importados.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- NOSOTROS -->
+  <section id="nosotros" data-screen-label="Nosotros" style="max-width:1280px;margin:0 auto;border-left:1px solid oklch(0.22 0.02 80 / 0.12);border-right:1px solid oklch(0.22 0.02 80 / 0.12);border-bottom:1px solid oklch(0.22 0.02 80 / 0.12);">
+    <div style="padding:14px 40px;border-bottom:1px solid oklch(0.22 0.02 80 / 0.12);">
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.08em;color:oklch(0.5 0.02 80);">NOSOTROS</span>
+    </div>
+    <div style="display:grid;grid-template-columns:1.4fr 1fr;">
+      <div style="padding:60px 40px;border-right:1px solid oklch(0.22 0.02 80 / 0.12);">
+        <p style="font-family:'Newsreader',serif;font-size:clamp(20px,2.2vw,26px);line-height:1.55;margin:0;font-weight:400;">DeepControl nace de una pregunta simple: ¿por qué el análisis de precisión sigue siendo un privilegio de quienes pueden importar infraestructura de laboratorio? Latinoamérica produce vino, alimentos y diagnósticos de clase mundial, pero depende de instrumentos y soporte técnico que vienen de afuera. Construimos la alternativa: una plataforma modular pensada y soportada localmente.</p>
+      </div>
+      <div style="padding:60px 40px;">
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.08em;color:oklch(0.5 0.02 80);">EQUIPO</span>
+        <div style="margin-top:24px;display:flex;flex-direction:column;gap:24px;">
+          <div style="border-top:1px solid oklch(0.22 0.02 80 / 0.15);padding-top:16px;">
+            <h4 style="font-family:'Newsreader',serif;font-weight:500;font-size:20px;margin:0 0 4px;">Leonardo</h4>
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:oklch(0.5 0.02 80);">Comercial y Estrategia</span>
+          </div>
+          <div style="border-top:1px solid oklch(0.22 0.02 80 / 0.15);padding-top:16px;">
+            <h4 style="font-family:'Newsreader',serif;font-weight:500;font-size:20px;margin:0 0 4px;">Daniel</h4>
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:oklch(0.5 0.02 80);">Producto y Tecnología</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section id="contacto" data-screen-label="Contacto" style="max-width:1280px;margin:0 auto;border-left:1px solid oklch(0.22 0.02 80 / 0.12);border-right:1px solid oklch(0.22 0.02 80 / 0.12);border-bottom:1px solid oklch(0.22 0.02 80 / 0.12);">
+    <div style="padding:14px 40px;border-bottom:1px solid oklch(0.22 0.02 80 / 0.12);">
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.08em;color:oklch(0.5 0.02 80);">CONTACTO</span>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;">
+      <div style="padding:60px 40px;border-right:1px solid oklch(0.22 0.02 80 / 0.12);display:flex;flex-direction:column;justify-content:center;">
+        <h2 style="font-family:'Newsreader',serif;font-weight:500;font-size:clamp(28px,3.4vw,38px);margin:0 0 18px;line-height:1.15;">Conversemos sobre tu caso</h2>
+        <p style="font-size:16px;line-height:1.6;color:oklch(0.42 0.02 80);margin:0;max-width:420px;">Cuéntanos qué necesitas controlar y evaluamos si la plataforma aplica a tu operación.</p>
+      </div>
+      <div style="padding:60px 40px;">
+        <sc-if value="{{ formSubmitted }}" hint-placeholder-val="{{ false }}">
+          <div style="border:1px solid oklch(0.22 0.02 80 / 0.15);padding:32px;">
+            <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:oklch(0.62 0.19 35);">RECIBIDO</span>
+            <p style="font-family:'Newsreader',serif;font-size:20px;margin:12px 0 0;line-height:1.5;">Gracias por escribirnos. Un miembro del equipo revisará tu caso y te contactará directamente — no agendamos demos automáticas.</p>
+          </div>
+        </sc-if>
+        <sc-if value="{{ formNotSubmitted }}" hint-placeholder-val="{{ true }}">
+          <form onSubmit="{{ handleSubmit }}" style="display:flex;flex-direction:column;gap:18px;">
+            <div style="display:flex;flex-direction:column;gap:6px;">
+              <label style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.05em;color:oklch(0.5 0.02 80);">NOMBRE</label>
+              <input name="nombre" required="true" style="border:none;border-bottom:1px solid oklch(0.22 0.02 80 / 0.3);background:transparent;padding:10px 2px;font-size:15px;color:oklch(0.22 0.02 80);outline:none;"/>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:6px;">
+              <label style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.05em;color:oklch(0.5 0.02 80);">EMPRESA</label>
+              <input name="empresa" style="border:none;border-bottom:1px solid oklch(0.22 0.02 80 / 0.3);background:transparent;padding:10px 2px;font-size:15px;color:oklch(0.22 0.02 80);outline:none;"/>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:6px;">
+              <label style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.05em;color:oklch(0.5 0.02 80);">SECTOR</label>
+              <input name="sector" placeholder="Ej. Vitivinicultura, agroexportación, diagnóstico…" style="border:none;border-bottom:1px solid oklch(0.22 0.02 80 / 0.3);background:transparent;padding:10px 2px;font-size:15px;color:oklch(0.22 0.02 80);outline:none;"/>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:6px;">
+              <label style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.05em;color:oklch(0.5 0.02 80);">MENSAJE</label>
+              <textarea name="mensaje" rows="4" required="true" style="border:none;border-bottom:1px solid oklch(0.22 0.02 80 / 0.3);background:transparent;padding:10px 2px;font-size:15px;color:oklch(0.22 0.02 80);outline:none;resize:vertical;font-family:'IBM Plex Sans',sans-serif;"></textarea>
+            </div>
+            <button type="submit" style="margin-top:10px;align-self:flex-start;font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:0.03em;padding:14px 28px;background:oklch(0.22 0.02 80);color:oklch(0.97 0.012 80);border:none;cursor:pointer;">Enviar</button>
+          </form>
+        </sc-if>
+      </div>
+    </div>
+  </section>
+
+  <footer style="max-width:1280px;margin:0 auto;padding:24px 40px;display:flex;justify-content:space-between;border-left:1px solid oklch(0.22 0.02 80 / 0.12);border-right:1px solid oklch(0.22 0.02 80 / 0.12);border-bottom:1px solid oklch(0.22 0.02 80 / 0.12);">
+    <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:oklch(0.5 0.02 80);">DEEPCONTROL</span>
+    <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:oklch(0.5 0.02 80);">deepcontrol.net</span>
+  </footer>
+
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { mobileOpen: false, formSubmitted: false };
+  toggleMobileNav = () => this.setState(s => ({ mobileOpen: !s.mobileOpen }));
+  closeMobileNav = () => this.setState({ mobileOpen: false });
+  handleSubmit = (e) => {
+    e.preventDefault();
+    this.setState({ formSubmitted: true });
+  };
+  renderVals() {
+    return {
+      mobileOpen: this.state.mobileOpen,
+      mobileMenuLabel: this.state.mobileOpen ? 'CERRAR' : 'MENÚ',
+      toggleMobileNav: this.toggleMobileNav,
+      closeMobileNav: this.closeMobileNav,
+      formSubmitted: this.state.formSubmitted,
+      formNotSubmitted: !this.state.formSubmitted,
+      handleSubmit: this.handleSubmit,
+    };
+  }
+}
+
+</script>
+<script>
+(async () => {
+  if (!document.title || !document.title.trim()) document.title = "DeepControl";
+  // rAF raced with a short timeout: inside a cross-origin iframe (PrintMode),
+  // rAF can be throttled or paused even while the tab is focused, which would
+  // hang the scroll loop and never reach print(). Same pattern as
+  // buildExportSettleScript (export/shared.ts).
+  var raf = function () {
+    return Promise.race([
+      new Promise(function (r) { requestAnimationFrame(r); }),
+      new Promise(function (r) { setTimeout(r, 50); }),
+    ]);
+  };
+  var t0 = performance.now();
+  var mark = function (phase) {
+    var ms = Math.round(performance.now() - t0);
+    console.info('[autoprint]', phase, ms + 'ms');
+    try { parent.postMessage({ __omelette_autoprint: { phase: phase, ms: ms } }, '*'); } catch (e) {}
+  };
+  mark('start');
+  // Prepend so page-supplied @page / break rules (deck-stage's margin:0,
+  // author CSS) keep source-order precedence over the baseline.
+  const baseCss = document.createElement('style');
+  baseCss.textContent = "@media print {\n  figure, table { break-inside: avoid; }\n  *, *::before, *::after {\n    print-color-adjust: exact; -webkit-print-color-adjust: exact;\n    backdrop-filter: none !important; -webkit-backdrop-filter: none !important;\n    animation-delay: -99s !important; animation-duration: .001s !important;\n    animation-iteration-count: 1 !important; animation-fill-mode: both !important;\n    animation-play-state: running !important; transition-duration: 0s !important;\n  }\n}";
+  document.head.prepend(baseCss);
+  if (document.readyState === 'loading') {
+    await new Promise((r) => document.addEventListener('DOMContentLoaded', r, { once: true }));
+  }
+  let ds = document.querySelector('deck-stage');
+  // whenDefined never resolves when nothing registers the element, so only
+  // await it when a <deck-stage> tag exists (and race a timeout regardless).
+  if (ds && !customElements.get('deck-stage')) {
+    try {
+      await Promise.race([
+        customElements.whenDefined('deck-stage'),
+        new Promise((r) => setTimeout(r, 3000)),
+      ]);
+    } catch (e) {}
+    ds = document.querySelector('deck-stage');
+  }
+  // dc-runtime assigns window.DCLogic at init and mounts into #dc-root on
+  // DOMContentLoaded; settle on that subtree so React has rendered before
+  // print(). Non-DC pages fall through to weighing body.
+  const isDc = !ds && 'DCLogic' in window;
+  const settleRoot = ds || (isDc ? document.getElementById('dc-root') : null) || document.body;
+  if (settleRoot) {
+    // Weigh only content children — skip script/style/template so inline
+    // Babel/CSS doesn't register as stable "content" before the framework
+    // has mounted anything.
+    const MEDIA = 'img,svg,canvas,video,picture,iframe,embed,object';
+    const weigh = () => {
+      let text = 0, media = 0;
+      for (const c of settleRoot.children) {
+        const t = c.tagName;
+        if (t === 'SCRIPT' || t === 'STYLE' || t === 'TEMPLATE') continue;
+        text += (c.textContent || '').trim().length;
+        media += c.querySelectorAll(MEDIA).length + (c.matches(MEDIA) ? 1 : 0);
+      }
+      return text + media * 100;
+    };
+    // "Non-zero and stable" alone is not sufficient to mean rendered: generic
+    // body can carry a static shell while async main content is pending, and
+    // #dc-root can carry the root DC's static text while child refs are still
+    // .sc-placeholder boxes. Gate generic on readyState 'complete', and never
+    // accept stability while a dc-runtime placeholder is present.
+    const isGeneric = settleRoot === document.body;
+    // A placeholder whose fetch failed (.sc-placeholder-error inside) keeps
+    // .sc-placeholder forever — don't wait on it. JS loop, not :has(), so an
+    // engine without :has() support can't throw out of the while and skip
+    // print() entirely.
+    var pendingPlaceholders = function () {
+      var all = settleRoot.querySelectorAll('.sc-placeholder'), n = 0;
+      for (var i = 0; i < all.length; i++)
+        if (!all[i].querySelector('.sc-placeholder-error')) n++;
+      return n;
+    };
+    const deadline = Date.now() + 15000;
+    let last = -1, stable = 0;
+    while (Date.now() < deadline) {
+      const n = weigh();
+      const ready =
+        (!isGeneric || document.readyState === 'complete') &&
+        pendingPlaceholders() === 0;
+      if (n > 0 && n === last && ready) { if (++stable >= 2) break; } else { stable = 0; }
+      last = n;
+      await new Promise((r) => setTimeout(r, 250));
+    }
+  }
+  mark('settle-done' + (settleRoot ? ' (errs=' + settleRoot.querySelectorAll('.sc-placeholder-error').length + ' pending=' + pendingPlaceholders() + ')' : ''));
+  // Project support.js may predate runtime default-seeding; push via bridge.
+  if (isDc && window.__dcSetProps && window.__dcRootName) {
+    try {
+      const dpEl = document.querySelector('script[data-dc-script]');
+      const meta = JSON.parse((dpEl && dpEl.getAttribute('data-props')) || '{}');
+      const bag = {};
+      for (const k in meta)
+        if (k[0] !== '$' && meta[k] && meta[k].default !== undefined)
+          bag[k] = meta[k].default;
+      if (Object.keys(bag).length) {
+        window.__dcSetProps(window.__dcRootName(), bag);
+        await new Promise((r) => setTimeout(r, 50));
+      }
+    } catch (e) {}
+  }
+  // Reveal content gated on scroll or visibility before printing. Lazy <img>,
+  // IntersectionObserver fade-ins, and collapsed <details> don't render while
+  // off-screen, so a long page would print with them blank or closed. Open
+  // every <details>, force native-lazy images eager, and scroll the document
+  // through its full height to trip lazy-load + IO; then wait (bounded) for the
+  // newly-triggered images. Inert for deck-stage (slides aren't scroll-gated).
+  try {
+    for (const d of document.querySelectorAll('details')) d.open = true;
+    for (const img of document.querySelectorAll('img[loading="lazy"]'))
+      img.loading = 'eager';
+    const scroller = document.scrollingElement || document.documentElement;
+    const full = Math.max(scroller.scrollHeight, document.body.scrollHeight);
+    const step = window.innerHeight || 800;
+    var scrollDeadline = Date.now() + 4000;
+    for (let y = 0; y <= full && Date.now() < scrollDeadline; y += step) {
+      window.scrollTo(0, y);
+      await raf();
+    }
+    window.scrollTo(0, 0);
+    await Promise.race([
+      Promise.all(
+        [...document.images].map((img) =>
+          img.complete
+            ? null
+            : new Promise((res) => {
+                img.addEventListener('load', res, { once: true });
+                img.addEventListener('error', res, { once: true });
+              })
+        )
+      ),
+      new Promise((r) => setTimeout(r, 4000)),
+    ]);
+  } catch (e) {}
+  mark('scroll-done');
+  try { await Promise.race([document.fonts.ready, new Promise((r) => setTimeout(r, 3000))]); } catch (e) {}
+  mark('fonts-done');
+  // Jump every animation to its end state so print() never captures a slide
+  // mid-entrance. Ordering matters: the 0s-transition style must be live
+  // BEFORE data-deck-active is set so attribute-keyed transitions don't
+  // start a (now-0s) run from the pre-active base.
+  const st = document.createElement('style');
+  st.textContent = '*,*::before,*::after{animation-delay:-99s !important;animation-duration:.001s !important;animation-iteration-count:1 !important;animation-fill-mode:both !important;animation-play-state:running !important;transition-duration:0s !important}';
+  document.head.appendChild(st);
+  for (const d of document.querySelectorAll('deck-stage')) {
+    for (const c of d.children) {
+      const t = c.tagName;
+      if (t === 'SCRIPT' || t === 'STYLE' || t === 'TEMPLATE') continue;
+      c.setAttribute('data-deck-active', '');
+    }
+  }
+  // Re-append deck-stage's @page last so no author @page can add a margin and
+  // spill each full-bleed slide onto two sheets. Backstop for old copies.
+  if (ds) {
+    let pg = document.getElementById('deck-stage-print-page');
+    if (!pg) {
+      pg = document.createElement('style');
+      pg.textContent = '@page{size:' + (+ds.getAttribute('width') || 1920) +
+        'px ' + (+ds.getAttribute('height') || 1080) + 'px;margin:0}';
+    }
+    document.body.appendChild(pg);
+  }
+  try {
+    const sweep = () => {
+      for (const a of document.getAnimations()) {
+        try { a.finish(); } catch (e) {
+          try { a.currentTime = (a.effect && a.effect.getComputedTiming().duration) || 0; a.pause(); } catch (e2) {}
+        }
+      }
+    };
+    sweep();
+    await raf();
+    sweep();
+    await raf();
+  } catch (e) {}
+  // A document that owns its print CSS (the doc-page starter injects the
+  // meta at runtime; hand-rolled print designs author it) gets no automatic
+  // page geometry and keeps its forced breaks: strip the injected default
+  // @page — write time cannot see a runtime-injected meta — skip the frame
+  // override below, and skip the fakepage-flattening further down. What
+  // still applies: the print baseline and break-hygiene defaults (no @page
+  // in either; low specificity, so the document's own print CSS wins) and
+  // the break-inside relaxation on >page elements (avoid on those cannot
+  // be honored whoever authored it).
+  var ownsPrint = !!document.querySelector('meta[name="omelette-owns-print" i]');
+  if (ownsPrint) {
+    var dst = document.querySelector('style[data-omelette-print-defaults]');
+    if (dst && dst.textContent) {
+      dst.textContent = dst.textContent.replace(/@page\b[^{}]*\{[^}]*\}/, '');
+    }
+  }
+  // Size the PDF page to the rendered design unless the file opted into
+  // standard paper via @page{size:letter|A4|…} or declared print ownership
+  // via the meta above. Decks own their own @page.
+  // Wrappers (body, …) lose padding+margin so the frame sits at (0,0); the
+  // frame itself loses only margin — its padding is INSIDE the measured
+  // rect and must stay, or content shifts and leaves a gap at bottom/right.
+  var __m = null;
+  try { __m = (() => {
+  var STAMP = true;
+  var docEl = document.documentElement;
+  var doc = { width: docEl.scrollWidth, height: docEl.scrollHeight };
+  // Name-presence check, case-insensitive — the same contract as the
+  // instant-PDF path's runtime check in deck-stage-export.ts. The name is
+  // a string literal here because that file interpolates this script into
+  // its print script, so importing a shared constant from it would be a
+  // cycle; measure.test.ts pins the literal so the two cannot drift apart
+  // silently.
+  var ownsPrint = !!document.querySelector('meta[name="omelette-owns-print" i]');
+
+  var ds = document.querySelector('deck-stage');
+  if (ds) {
+    var dw = Number(ds.getAttribute('width')) || 1920;
+    var dh = Number(ds.getAttribute('height')) || 1080;
+    var n = typeof ds.length === 'number' ? ds.length : ds.children.length;
+    var idx = typeof ds.index === 'number' ? ds.index : 0;
+    var frames = [];
+    for (var i = 0; i < n; i++) frames.push({ left: 0, top: 0, width: dw, height: dh });
+    return { kind: 'deck', source: 'declared', doc: doc, frames: frames,
+      authored: frames.map(function(){return{width:true,height:true}}),
+      deck: { width: dw, height: dh, slideCount: n, index: idx },
+      signals: { paperPage: false, pxPage: false, ownsPrint: ownsPrint } };
+  }
+
+  // Declared kind: a doc-page tag names the kind outright, so no signal
+  // heuristics run (like the deck branch above, signals report false —
+  // they describe inferred classifications only). The tag alone is not
+  // trusted: the element must have upgraded (shadowRoot present), so a
+  // leftover tag whose script was deleted falls through to the heuristics
+  // that handle plain markup.
+  var stageSx = window.scrollX || 0, stageSy = window.scrollY || 0;
+  var dp = document.querySelector('doc-page');
+  if (dp && dp.shadowRoot) {
+    // Crop to the sheet, not the host — the desk around it is screen-only
+    // chrome that must not land in PNG exports.
+    var sheet = dp.shadowRoot.querySelector('.sheet');
+    var sr = (sheet || dp).getBoundingClientRect();
+    return { kind: 'paper-doc', source: 'declared', doc: doc,
+      frames: [{ left: sr.left + stageSx, top: sr.top + stageSy,
+        width: sr.width, height: sr.height }],
+      authored: [{ width: false, height: false }],
+      signals: { paperPage: false, pxPage: false, ownsPrint: ownsPrint } };
+  }
+  var paperPage = false, pxPage = false;
+  var eachRule = function (fn) {
+    for (var s = 0; s < document.styleSheets.length; s++) {
+      var rs; try { rs = document.styleSheets[s].cssRules; } catch (e) { continue; }
+      for (var r = 0; r < rs.length; r++) {
+        fn(rs[r]);
+        if (rs[r].cssRules) for (var n = 0; n < rs[r].cssRules.length; n++) fn(rs[r].cssRules[n]);
+      }
+    }
+  };
+  eachRule(function (r) {
+    if (r.type !== 6) return;
+    var m = /\bsize\s*:\s*([^;}]+)/i.exec(r.cssText || '');
+    if (!m) return;
+    if (/\b(letter|a[3-5]|legal|ledger)\b/i.test(m[1])) paperPage = true;
+    if (/\d+(?:\.\d+)?px\b/i.test(m[1])) pxPage = true;
+  });
+  var signals = { paperPage: paperPage, pxPage: pxPage, ownsPrint: ownsPrint };
+
+  var pxVal = function (v) {
+    var m = /^(\d+(?:\.\d+)?)px$/.exec(v || ''); return m ? +m[1] : 0;
+  };
+  var authoredPx = function (el, prop) {
+    if (pxVal(el.style[prop])) return true;
+    var attr = el.getAttribute(prop);
+    if (attr && /^\d+$/.test(attr)) return true;
+    var hit = false;
+    eachRule(function (r) {
+      if (hit || r.type !== 1 || !r.style) return;
+      try { if (el.matches(r.selectorText) && pxVal(r.style[prop])) hit = true; } catch (e) {}
+    });
+    return hit;
+  };
+
+  var el = document.body, rootPxW = false;
+  for (;;) {
+    var kids = [];
+    for (var c = 0; c < el.children.length; c++) {
+      var t = el.children[c].tagName;
+      if (t !== 'SCRIPT' && t !== 'STYLE' && t !== 'TEMPLATE') kids.push(el.children[c]);
+    }
+    if (kids.length !== 1 || !(kids[0] instanceof HTMLElement)) break;
+    if (STAMP) el.setAttribute('data-om-frame-wrap', '');
+    el = kids[0];
+    rootPxW = authoredPx(el, 'width');
+    if (rootPxW) break;
+  }
+  if (!rootPxW) rootPxW = authoredPx(el, 'width');
+
+  // @page{size:letter} alone is a flowing doc; with a px-width root it's a
+  // fixed sheet pretending to be paper — fall through and size to render.
+  if (paperPage && !rootPxW) {
+    return { kind: 'paper-doc', source: 'inferred', doc: doc, signals: signals,
+      frames: [{ left: 0, top: 0, width: doc.width, height: doc.height }],
+      authored: [{ width: false, height: false }] };
+  }
+
+  var sx = window.scrollX || 0, sy = window.scrollY || 0;
+  var rectOf = function (e) {
+    var r = e.getBoundingClientRect();
+    var oy; try { oy = getComputedStyle(e).overflowY; } catch (err) {}
+    var h = oy === 'visible' ? Math.max(r.height, e.scrollHeight || 0) : r.height;
+    return { left: r.left + sx, top: r.top + sy, width: r.width, height: h };
+  };
+
+  // Multi-frame: off unless the page opts in via data-om-multi-frame on the
+  // stop element — the explicit opt-in is what guards against card grids
+  // and pricing tables that match the geometry but aren't separate
+  // canvases. Two ways to name the frames, explicit first:
+  // 1. Descendants marked data-om-frame-export (the social-frames starter
+  //    marks each asset frame; shells/panels around them are presentation,
+  //    so nesting is expected). Document order.
+  // 2. Fallback, no marked descendants: direct children with an authored px
+  //    width AND height (the original geometry heuristic).
+  // Frames may be different sizes (a gallery mixes 1080×1920 stories with
+  // 728×90 banners); data-om-frame-label rides along for export filenames.
+  if (el.hasAttribute('data-om-multi-frame')) {
+    var visOk = function (e) {
+      var cs; try { cs = getComputedStyle(e); } catch (err) { return false; }
+      return cs.display !== 'none' && cs.visibility !== 'hidden' && cs.position !== 'fixed';
+    };
+    // A frame's crop is its VISUAL box — never the scrollHeight-inflated
+    // rect that rectOf computes for page roots. Shadow-DOM hover controls
+    // (image-slot's Replace bar parks 29px below its host) and similar
+    // escaping UI contribute scrollable overflow to the frame, and the
+    // inflated height both squashes the nominal-size resize and drags
+    // content below the frame into the crop. Zoom-independent; bit every
+    // slot-bearing frame.
+    var frameRectOf = function (e) {
+      var r = e.getBoundingClientRect();
+      return { left: r.left + sx, top: r.top + sy, width: r.width, height: r.height };
+    };
+    var pushCand = function (list, e) {
+      if (!visOk(e)) return;
+      var rc = frameRectOf(e);
+      if (rc.width < 2 || rc.height < 2) return;
+      var lbl = e.getAttribute('data-om-frame-label');
+      if (lbl) rc.label = lbl;
+      list.push(rc);
+    };
+    var cands = [];
+    var marked = el.querySelectorAll('[data-om-frame-export]');
+    if (marked.length) {
+      for (var mk = 0; mk < marked.length; mk++) pushCand(cands, marked[mk]);
+    } else {
+      for (var k = 0; k < el.children.length; k++) {
+        var ch = el.children[k];
+        if (!authoredPx(ch, 'width') || !authoredPx(ch, 'height')) continue;
+        pushCand(cands, ch);
+      }
+    }
+    if (cands.length >= 2) {
+      return { kind: 'multi-frame', source: 'inferred', doc: doc, signals: signals,
+        frames: cands, authored: cands.map(function(){return{width:true,height:true}}) };
+    }
+  }
+
+  if (STAMP) el.setAttribute('data-om-frame', '');
+  return { kind: 'single-canvas', source: 'inferred', doc: doc, signals: signals,
+    frames: [rectOf(el)],
+    authored: [{ width: rootPxW, height: authoredPx(el, 'height') }] };
+})(); } catch (e) {}
+  var frame = null;
+  if (!ownsPrint && __m && __m.kind === 'single-canvas') {
+    var f = __m.frames && __m.frames[0];
+    if (f && f.width >= 200 && f.height >= 200) {
+      frame = f;
+      var fst = document.createElement('style');
+      fst.textContent = '@media print{@page{size:' + Math.ceil(f.width) + 'px ' +
+        Math.ceil(f.height) + 'px;margin:0}' +
+        'html,body,[data-om-frame-wrap]{padding:0!important;margin:0!important;background:none!important}' +
+        '[data-om-frame]{margin:0!important}}';
+      document.body.appendChild(fst);
+    }
+  }
+  // Relax break-inside on oversized elements. An element taller than a
+  // printable page can't honor break-inside: avoid — browsers either overflow
+  // it or push it whole to the next page, leaving a blank gap, then break it
+  // anyway at an arbitrary point. After the final layout (content revealed,
+  // animations jumped), find elements taller than a page that still compute
+  // break-inside: avoid and reset them to auto, so the browser breaks them at
+  // their children's boundaries instead (children keep their own avoid). PAGE_PX
+  // is a conservative portrait estimate at 96 CSS px/in — Letter/A4 usable
+  // height minus our 0.5in margins — so only clearly-oversized elements are
+  // touched and under-page elements still stay whole. Skipped for decks (slides
+  // are sized to the page) and for fixed-size canvases (frame set, or an author
+  // px-based @page) — runs as before for flowing docs on letter/A4.
+  try {
+    if (!ds && !frame && !(__m && __m.signals && __m.signals.pxPage)) {
+      const PAGE_PX = 1024;
+      // Our print defaults add a real @page margin only when the source has
+      // no @page of its own; computed style can't tell us (it reports screen
+      // media), so read the injected rule directly.
+      const defaults = document.querySelector('style[data-omelette-print-defaults]');
+      const pageInset = /@page\s*\{[^}]*margin/.test(defaults ? defaults.textContent || '' : '');
+      const SEL = 'section,article,figure,table,pre,blockquote,[class~="card" i],[class~="page" i],[class~="sheet" i]';
+      for (const el of document.body.querySelectorAll(SEL)) {
+        if (el instanceof HTMLElement && el.offsetHeight > PAGE_PX) {
+          el.setAttribute('data-om-oversized', '');
+          // Fake-paged docs simulate sheets with over-tall break-after:page
+          // boxes; honoring the break spills half-blank pages and ends a
+          // colored box mid-sheet. Flow them, and (only when we own the page
+          // inset) drop the redundant padding/background via the rule below.
+          const cs = getComputedStyle(el);
+          // An owns-print doc's forced breaks are intentional sheet
+          // boundaries, never fake-paged simulation — don't strip them.
+          // The break-inside relaxation above still applies: avoid on a
+          // >page element is impossible to honor whoever authored it.
+          if (
+            !ownsPrint &&
+            (cs.breakAfter === 'page' || cs.pageBreakAfter === 'always')
+          ) {
+            el.setAttribute('data-om-fakepage', '');
+          }
+        }
+      }
+      const ost = document.createElement('style');
+      ost.textContent = '@media print{' +
+        '[data-om-oversized]{break-inside:auto !important;page-break-inside:auto !important}' +
+        '[data-om-fakepage]{break-after:auto !important;page-break-after:auto !important}' +
+        (pageInset ? '[data-om-fakepage]{padding:0 !important;background:none !important}' : '') +
+        '}';
+      document.head.appendChild(ost);
+    }
+  } catch (e) {}
+  // macOS Preview renders Skia-PDF Luminosity soft-masks as opaque grey boxes;
+  // swap the CSS that triggers them for Preview-safe forms.
+  try {
+    for (const el of document.body.querySelectorAll('*')) {
+      const cs = getComputedStyle(el);
+
+      if (cs.boxShadow !== 'none' && cs.filter === 'none') {
+        const outs = [], kept = [];
+        for (const s of cs.boxShadow.split(/,(?![^(]*[)])/)) {
+          const t = s.trim();
+          const m = t.match(/^(rgba?[(][^)]+[)]) (-?[0-9.]+px) (-?[0-9.]+px) ([0-9.]+px) -?[0-9.]+px$/);
+          if (m && parseFloat(m[4]) > 0) outs.push('drop-shadow(' + m[2] + ' ' + m[3] + ' ' + m[4] + ' ' + m[1] + ')');
+          else kept.push(t);
+        }
+        if (outs.length) {
+          el.style.setProperty('filter', outs.join(' '), 'important');
+          el.style.setProperty('box-shadow', kept.join(', ') || 'none', 'important');
+        }
+      }
+
+      const mask = cs.maskImage && cs.maskImage !== 'none' ? cs.maskImage : cs.webkitMaskImage;
+      if (mask && mask !== 'none' && cs.filter === 'none') el.style.setProperty('filter', 'opacity(1)', 'important');
+    }
+  } catch (e) {}
+  mark('print-calling');
+  setTimeout(() => { try { window.print(); } catch (e) {} }, 200);
+})();
+</script>
+</body>
+</html>
