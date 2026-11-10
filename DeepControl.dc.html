@@ -218,137 +218,44 @@
     </div>
   </section>
 
-      <!-- APLICACIONES -->
+  <!-- APLICACIONES -->
   <section id="aplicaciones" data-screen-label="Aplicaciones" style="max-width:1280px;margin:0 auto;border-left:1px solid var(--dc-border);border-right:1px solid var(--dc-border);border-bottom:1px solid var(--dc-border);">
-    <style>
-  .dc-app-card{transition:opacity .35s ease, box-shadow .35s ease, outline-color .35s ease;cursor:pointer;}
-  .dc-app-card:hover{box-shadow:0 8px 26px oklch(0.22 0.02 80 / 0.09);}
-  .dc-app-card.dim{opacity:.13;}
-  .dc-app-card.sel{box-shadow:0 10px 30px oklch(0.22 0.02 80 / 0.15);outline:2px solid var(--dc-accent);outline-offset:-2px;}
-  .dc-app-area{cursor:pointer;transition:transform .15s, box-shadow .15s;}
-  .dc-app-area:hover{transform:translateY(-1px);box-shadow:0 3px 10px oklch(0.22 0.02 80 / 0.16);}
-  .dc-area-btn{cursor:pointer;display:inline-flex;align-items:center;gap:7px;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.02em;color:oklch(0.45 0.02 80);background:transparent;border:1px solid var(--dc-border);border-radius:99px;padding:7px 14px;transition:all .18s;}
-  .dc-area-btn:hover{border-color:var(--dc-accent);color:var(--dc-accent);}
-  .dc-area-btn .dot{width:9px;height:9px;border-radius:50%;display:inline-block;}
-  .dc-area-btn.active{background:oklch(0.985 0.008 80);border-color:var(--dc-accent);color:var(--dc-accent);font-weight:500;}
-  .dc-reset{cursor:pointer;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.05em;color:oklch(0.5 0.02 80);background:transparent;border:none;border-bottom:1px solid var(--dc-border);padding:4px 2px;display:none;transition:color .18s;}
-  .dc-reset:hover{color:var(--dc-accent);border-color:var(--dc-accent);}
-  .dc-app-panel{position:fixed;top:96px;right:24px;width:344px;max-width:calc(100vw - 32px);background:#fff;border:1px solid var(--dc-border);border-top:3px solid var(--dc-accent);border-radius:12px;padding:22px 24px;box-shadow:0 18px 52px oklch(0.22 0.02 80 / 0.2);z-index:300;font-size:14px;}
-  .dc-app-panel .p-close{position:absolute;top:10px;right:12px;background:none;border:none;font-family:'IBM Plex Mono',monospace;font-size:15px;color:oklch(0.45 0.02 80);cursor:pointer;transition:color .15s;}
-  .dc-app-panel .p-close:hover{color:var(--dc-accent);}
-  .p-chip{display:inline-flex;align-items:center;gap:4px;font-family:'IBM Plex Mono',monospace;font-size:10px;color:oklch(0.4 0.02 80);background:oklch(0.97 0.012 80);border:1px solid var(--dc-border);border-radius:99px;padding:2px 8px;}
-  @media (max-width:859px){ .dc-app-panel{top:auto;bottom:12px;left:12px;right:12px;width:auto;} }
-</style>
     <div style="padding:14px 40px;border-bottom:1px solid var(--dc-border);background:#201a10;">
       <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.08em;color:oklch(0.75 0.02 80);display:var(--dc-eyebrow-display);"><b>APLICACIONES</b></span>
     </div>
-    <div style="padding:var(--dc-pad-l) 40px;border-bottom:1px solid var(--dc-border);">
-      <h2 style="font-family:'Newsreader',serif;font-weight:500;font-size:clamp(26px,3.2vw,36px);margin:0 0 12px;max-width:760px;line-height:1.15;">Aplicaciones de alta factibilidad</h2>
-      <p style="font-size:16px;line-height:1.7;color:oklch(0.42 0.02 80);margin:0;max-width:760px;">Ocho aplicaciones listas para ofrecer hoy, construidas sobre nuestras seis capacidades técnicas. Tocá un área para resaltar sus aplicaciones o una tarjeta para ver el detalle.</p>
-    </div>
-    <div class="dc-apps" id="dcApps" style="display:grid;grid-template-columns:repeat(2,1fr);">
-      <div class="dc-app-card" data-code="G3" data-title="Banco universitario de microfluídica" data-sectores="UNIVERSIDADES · I+D" data-desc="Chips custom MOQ1 + equipos + training. Informe de 13 laboratorios como base comercial." data-areas="A2,A5,A1,A6" style="padding:var(--dc-pad-m) 40px;position:relative;overflow:hidden;;border-right:1px solid var(--dc-border);border-bottom:1px solid var(--dc-border)">
-        <div style="position:absolute;left:0;top:0;bottom:0;width:6px;display:flex;flex-direction:column;"><span style="flex:1;background:#f72585;"></span><span style="flex:1;background:#06d6a0;"></span><span style="flex:1;background:#4cc9f0;"></span></div>
-        <div style="display:flex;align-items:center;justify-content:space-between;padding-left:14px;">
-          <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--dc-accent);font-weight:500;">G3</span>
-          <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.08em;color:oklch(0.5 0.02 80);">ALTA FACTIBILIDAD</span>
+    <div class="dc-grid-2" style="display:grid;grid-template-columns:repeat(2,1fr);">
+      <div class="dc-border-r" style="padding:var(--dc-pad-m2) 40px;border-right:1px solid var(--dc-border);border-bottom:1px solid var(--dc-border);">
+        <div style="display:flex;align-items:center;justify-content:space-between;">
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--dc-accent);">01</span>
+          <svg width="44" height="44" viewBox="0 0 44 44"><path d="M14 10 h16 M18 10 v9 l-7 14 a4 4 0 0 0 3 6 h16 a4 4 0 0 0 3 -6 l-7 -14 v-9" fill="none" stroke="oklch(0.35 0.02 80)" stroke-width="1.5" stroke-linejoin="round"></path><path d="M13.5 27 h17" stroke="var(--dc-accent)" stroke-width="1.5"></path><circle cx="19" cy="31" r="1.8" fill="var(--dc-accent)"></circle><circle cx="25" cy="33" r="1.4" fill="var(--dc-accent)"></circle></svg>
         </div>
-        <h3 style="font-family:'Newsreader',serif;font-weight:500;font-size:23px;margin:12px 0 6px;padding-left:14px;line-height:1.2;">Banco universitario de microfluídica</h3>
-        <p style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.04em;color:var(--dc-accent);margin:0 0 10px;padding-left:14px;">UNIVERSIDADES · I+D</p>
-        <p style="font-size:15px;line-height:1.65;color:oklch(0.42 0.02 80);margin:0 0 18px;padding-left:14px;">Chips custom MOQ1 + equipos + training. Informe de 13 laboratorios como base comercial.</p>
-        <div style="display:flex;flex-wrap:wrap;gap:6px;padding-left:14px;"><span class="dc-app-area" data-area="A2" title="Ver aplicaciones de A2 · Microfluídica" style="display:inline-flex;align-items:center;gap:5px;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.02em;color:oklch(0.45 0.02 80);background:color-mix(in srgb, #f72585 13%, white);border:1px solid color-mix(in srgb, #f72585 40%, transparent);padding:3px 9px;border-radius:99px;"><span style="width:8px;height:8px;border-radius:50%;background:#f72585;display:inline-block;"></span>A2 · Microfluídica</span><span class="dc-app-area" data-area="A5" title="Ver aplicaciones de A5 · Integración" style="display:inline-flex;align-items:center;gap:5px;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.02em;color:oklch(0.45 0.02 80);background:color-mix(in srgb, #06d6a0 13%, white);border:1px solid color-mix(in srgb, #06d6a0 40%, transparent);padding:3px 9px;border-radius:99px;"><span style="width:8px;height:8px;border-radius:50%;background:#06d6a0;display:inline-block;"></span>A5 · Integración</span><span class="dc-app-area" data-area="A1" title="Ver aplicaciones de A1 · Fluidos" style="display:inline-flex;align-items:center;gap:5px;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.02em;color:oklch(0.45 0.02 80);background:color-mix(in srgb, #4cc9f0 13%, white);border:1px solid color-mix(in srgb, #4cc9f0 40%, transparent);padding:3px 9px;border-radius:99px;"><span style="width:8px;height:8px;border-radius:50%;background:#4cc9f0;display:inline-block;"></span>A1 · Fluidos</span><span class="dc-app-area" data-area="A6" title="Ver aplicaciones de A6 · Reactivos" style="display:inline-flex;align-items:center;gap:5px;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.02em;color:oklch(0.45 0.02 80);background:color-mix(in srgb, #ffd166 13%, white);border:1px solid color-mix(in srgb, #ffd166 40%, transparent);padding:3px 9px;border-radius:99px;"><span style="width:8px;height:8px;border-radius:50%;background:#ffd166;display:inline-block;"></span>A6 · Reactivos</span></div>
+        <h3 style="font-family:'Newsreader',serif;font-weight:500;font-size:24px;margin:10px 0 14px;">Análisis Químico Industrial</h3>
+        <p style="font-size:15px;line-height:1.65;color:oklch(0.42 0.02 80);margin:0;">Monitoreo de calidad en línea (agua de proceso, control de contaminantes) con sensórica microfluídica integrada, para plantas que hoy dependen de análisis externo o equipos importados.</p>
       </div>
-      <div class="dc-app-card" data-code="G5" data-title="Integración IoT / Industrial" data-sectores="ALIMENTOS · QUÍMICA" data-desc="Placas de integración, firmware y control de fluidos custom, llave en mano." data-areas="A5" style="padding:var(--dc-pad-m) 40px;position:relative;overflow:hidden;;border-bottom:1px solid var(--dc-border)">
-        <div style="position:absolute;left:0;top:0;bottom:0;width:6px;display:flex;flex-direction:column;"><span style="flex:1;background:#06d6a0;"></span></div>
-        <div style="display:flex;align-items:center;justify-content:space-between;padding-left:14px;">
-          <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--dc-accent);font-weight:500;">G5</span>
-          <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.08em;color:oklch(0.5 0.02 80);">ALTA FACTIBILIDAD</span>
+      <div style="padding:var(--dc-pad-m2) 40px;border-bottom:1px solid var(--dc-border);">
+        <div style="display:flex;align-items:center;justify-content:space-between;">
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--dc-accent);">02</span>
+          <svg width="44" height="44" viewBox="0 0 44 44"><ellipse cx="22" cy="16" rx="6" ry="9" transform="rotate(20 22 16)" fill="none" stroke="oklch(0.35 0.02 80)" stroke-width="1.5"></ellipse><ellipse cx="16" cy="29" rx="6" ry="9" transform="rotate(-15 16 29)" fill="none" stroke="oklch(0.35 0.02 80)" stroke-width="1.5"></ellipse><ellipse cx="29" cy="29" rx="6" ry="9" transform="rotate(45 29 29)" fill="none" stroke="var(--dc-accent)" stroke-width="1.5"></ellipse></svg>
         </div>
-        <h3 style="font-family:'Newsreader',serif;font-weight:500;font-size:23px;margin:12px 0 6px;padding-left:14px;line-height:1.2;">Integración IoT / Industrial</h3>
-        <p style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.04em;color:var(--dc-accent);margin:0 0 10px;padding-left:14px;">ALIMENTOS · QUÍMICA</p>
-        <p style="font-size:15px;line-height:1.65;color:oklch(0.42 0.02 80);margin:0 0 18px;padding-left:14px;">Placas de integración, firmware y control de fluidos custom, llave en mano.</p>
-        <div style="display:flex;flex-wrap:wrap;gap:6px;padding-left:14px;"><span class="dc-app-area" data-area="A5" title="Ver aplicaciones de A5 · Integración" style="display:inline-flex;align-items:center;gap:5px;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.02em;color:oklch(0.45 0.02 80);background:color-mix(in srgb, #06d6a0 13%, white);border:1px solid color-mix(in srgb, #06d6a0 40%, transparent);padding:3px 9px;border-radius:99px;"><span style="width:8px;height:8px;border-radius:50%;background:#06d6a0;display:inline-block;"></span>A5 · Integración</span></div>
+        <h3 style="font-family:'Newsreader',serif;font-weight:500;font-size:24px;margin:10px 0 14px;">Seguridad Alimentaria / Agroexportación</h3>
+        <p style="font-size:15px;line-height:1.65;color:oklch(0.42 0.02 80);margin:0;">Detección rápida de micotoxinas (aflatoxinas, ocratoxinas, fumonisinas) en frutos secos, granos, frutas deshidratadas y lácteos destinados a exportación, sin depender de laboratorio externo.</p>
       </div>
-      <div class="dc-app-card" data-code="G6" data-title="Kit llave en mano de análisis" data-sectores="AGRO · FOOD QC · IVD" data-desc="Ensayo completo de punta a punta: dosificación, reacción controlada, lectura y reporte." data-areas="A1,A2,A4,A6" style="padding:var(--dc-pad-m) 40px;position:relative;overflow:hidden;;border-right:1px solid var(--dc-border);border-bottom:1px solid var(--dc-border)">
-        <div style="position:absolute;left:0;top:0;bottom:0;width:6px;display:flex;flex-direction:column;"><span style="flex:1;background:#4cc9f0;"></span><span style="flex:1;background:#f72585;"></span><span style="flex:1;background:#9b5de5;"></span></div>
-        <div style="display:flex;align-items:center;justify-content:space-between;padding-left:14px;">
-          <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--dc-accent);font-weight:500;">G6</span>
-          <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.08em;color:oklch(0.5 0.02 80);">ALTA FACTIBILIDAD</span>
+      <div style="padding:var(--dc-pad-m2) 40px;border-right:1px solid var(--dc-border);">
+        <div style="display:flex;align-items:center;justify-content:space-between;">
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--dc-accent);">03</span>
+          <svg width="44" height="44" viewBox="0 0 44 44"><rect x="15" y="8" width="14" height="28" rx="7" fill="none" stroke="oklch(0.35 0.02 80)" stroke-width="1.5"></rect><path d="M15 24 h14" stroke="oklch(0.35 0.02 80)" stroke-width="1.2"></path><path d="M22 27 c-3 4 -3 6 0 6 s3 -2 0 -6 Z" fill="var(--dc-accent)"></path></svg>
         </div>
-        <h3 style="font-family:'Newsreader',serif;font-weight:500;font-size:23px;margin:12px 0 6px;padding-left:14px;line-height:1.2;">Kit llave en mano de análisis</h3>
-        <p style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.04em;color:var(--dc-accent);margin:0 0 10px;padding-left:14px;">AGRO · FOOD QC · IVD</p>
-        <p style="font-size:15px;line-height:1.65;color:oklch(0.42 0.02 80);margin:0 0 18px;padding-left:14px;">Ensayo completo de punta a punta: dosificación, reacción controlada, lectura y reporte.</p>
-        <div style="display:flex;flex-wrap:wrap;gap:6px;padding-left:14px;"><span class="dc-app-area" data-area="A1" title="Ver aplicaciones de A1 · Fluidos" style="display:inline-flex;align-items:center;gap:5px;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.02em;color:oklch(0.45 0.02 80);background:color-mix(in srgb, #4cc9f0 13%, white);border:1px solid color-mix(in srgb, #4cc9f0 40%, transparent);padding:3px 9px;border-radius:99px;"><span style="width:8px;height:8px;border-radius:50%;background:#4cc9f0;display:inline-block;"></span>A1 · Fluidos</span><span class="dc-app-area" data-area="A2" title="Ver aplicaciones de A2 · Microfluídica" style="display:inline-flex;align-items:center;gap:5px;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.02em;color:oklch(0.45 0.02 80);background:color-mix(in srgb, #f72585 13%, white);border:1px solid color-mix(in srgb, #f72585 40%, transparent);padding:3px 9px;border-radius:99px;"><span style="width:8px;height:8px;border-radius:50%;background:#f72585;display:inline-block;"></span>A2 · Microfluídica</span><span class="dc-app-area" data-area="A4" title="Ver aplicaciones de A4 · Óptica" style="display:inline-flex;align-items:center;gap:5px;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.02em;color:oklch(0.45 0.02 80);background:color-mix(in srgb, #9b5de5 13%, white);border:1px solid color-mix(in srgb, #9b5de5 40%, transparent);padding:3px 9px;border-radius:99px;"><span style="width:8px;height:8px;border-radius:50%;background:#9b5de5;display:inline-block;"></span>A4 · Óptica</span><span class="dc-app-area" data-area="A6" title="Ver aplicaciones de A6 · Reactivos" style="display:inline-flex;align-items:center;gap:5px;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.02em;color:oklch(0.45 0.02 80);background:color-mix(in srgb, #ffd166 13%, white);border:1px solid color-mix(in srgb, #ffd166 40%, transparent);padding:3px 9px;border-radius:99px;"><span style="width:8px;height:8px;border-radius:50%;background:#ffd166;display:inline-block;"></span>A6 · Reactivos</span></div>
+        <h3 style="font-family:'Newsreader',serif;font-weight:500;font-size:24px;margin:10px 0 14px;">Diagnóstico</h3>
+        <p style="font-size:15px;line-height:1.65;color:oklch(0.42 0.02 80);margin:0;">Testeo point-of-care de bajo volumen de muestra para análisis clínico y ambiental, portátil y sin infraestructura de laboratorio centralizado.</p>
       </div>
-      <div class="dc-app-card" data-code="G7" data-title="Gotas y emulsiones" data-sectores="UNIVERSIDADES · FARMA" data-desc="Gotas monodispersas con bombeo de precisión (<1 %) sobre chips flow-focusing." data-areas="A1,A2" style="padding:var(--dc-pad-m) 40px;position:relative;overflow:hidden;;border-bottom:1px solid var(--dc-border)">
-        <div style="position:absolute;left:0;top:0;bottom:0;width:6px;display:flex;flex-direction:column;"><span style="flex:1;background:#4cc9f0;"></span><span style="flex:1;background:#f72585;"></span></div>
-        <div style="display:flex;align-items:center;justify-content:space-between;padding-left:14px;">
-          <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--dc-accent);font-weight:500;">G7</span>
-          <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.08em;color:oklch(0.5 0.02 80);">ALTA FACTIBILIDAD</span>
+      <div style="padding:var(--dc-pad-m2) 40px;">
+        <div style="display:flex;align-items:center;justify-content:space-between;">
+          <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--dc-accent);">04</span>
+          <svg width="44" height="44" viewBox="0 0 44 44"><circle cx="17" cy="20" r="5" fill="none" stroke="oklch(0.35 0.02 80)" stroke-width="1.5"></circle><circle cx="27" cy="20" r="5" fill="none" stroke="oklch(0.35 0.02 80)" stroke-width="1.5"></circle><circle cx="22" cy="29" r="5" fill="none" stroke="var(--dc-accent)" stroke-width="1.5"></circle><path d="M22 15 q0 -8 8 -9" fill="none" stroke="oklch(0.35 0.02 80)" stroke-width="1.5" stroke-linecap="round"></path></svg>
         </div>
-        <h3 style="font-family:'Newsreader',serif;font-weight:500;font-size:23px;margin:12px 0 6px;padding-left:14px;line-height:1.2;">Gotas y emulsiones</h3>
-        <p style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.04em;color:var(--dc-accent);margin:0 0 10px;padding-left:14px;">UNIVERSIDADES · FARMA</p>
-        <p style="font-size:15px;line-height:1.65;color:oklch(0.42 0.02 80);margin:0 0 18px;padding-left:14px;">Gotas monodispersas con bombeo de precisión (<1 %) sobre chips flow-focusing.</p>
-        <div style="display:flex;flex-wrap:wrap;gap:6px;padding-left:14px;"><span class="dc-app-area" data-area="A1" title="Ver aplicaciones de A1 · Fluidos" style="display:inline-flex;align-items:center;gap:5px;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.02em;color:oklch(0.45 0.02 80);background:color-mix(in srgb, #4cc9f0 13%, white);border:1px solid color-mix(in srgb, #4cc9f0 40%, transparent);padding:3px 9px;border-radius:99px;"><span style="width:8px;height:8px;border-radius:50%;background:#4cc9f0;display:inline-block;"></span>A1 · Fluidos</span><span class="dc-app-area" data-area="A2" title="Ver aplicaciones de A2 · Microfluídica" style="display:inline-flex;align-items:center;gap:5px;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.02em;color:oklch(0.45 0.02 80);background:color-mix(in srgb, #f72585 13%, white);border:1px solid color-mix(in srgb, #f72585 40%, transparent);padding:3px 9px;border-radius:99px;"><span style="width:8px;height:8px;border-radius:50%;background:#f72585;display:inline-block;"></span>A2 · Microfluídica</span></div>
+        <h3 style="font-family:'Newsreader',serif;font-weight:500;font-size:24px;margin:10px 0 14px;">Vitivinicultura</h3>
+        <p style="font-size:15px;line-height:1.65;color:oklch(0.42 0.02 80);margin:0;">Detección temprana de compuestos no deseados (micotoxinas, ocratoxina A) en mosto y vino antes de exportar, y caracterización de mosto para optimizar el uso de materia prima en distintas condiciones de prefermentación.</p>
       </div>
-      <div class="dc-app-card" data-code="G10" data-title="Mezclado de alta viscosidad" data-sectores="ALIMENTOS · QC PLANTA" data-desc="Homogeneizar y diluir muestras difíciles (jugos, salsas, miel) con resultado repetible." data-areas="A1,A2,A5" style="padding:var(--dc-pad-m) 40px;position:relative;overflow:hidden;;border-right:1px solid var(--dc-border);border-bottom:1px solid var(--dc-border)">
-        <div style="position:absolute;left:0;top:0;bottom:0;width:6px;display:flex;flex-direction:column;"><span style="flex:1;background:#4cc9f0;"></span><span style="flex:1;background:#f72585;"></span><span style="flex:1;background:#06d6a0;"></span></div>
-        <div style="display:flex;align-items:center;justify-content:space-between;padding-left:14px;">
-          <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--dc-accent);font-weight:500;">G10</span>
-          <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.08em;color:oklch(0.5 0.02 80);">ALTA FACTIBILIDAD</span>
-        </div>
-        <h3 style="font-family:'Newsreader',serif;font-weight:500;font-size:23px;margin:12px 0 6px;padding-left:14px;line-height:1.2;">Mezclado de alta viscosidad</h3>
-        <p style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.04em;color:var(--dc-accent);margin:0 0 10px;padding-left:14px;">ALIMENTOS · QC PLANTA</p>
-        <p style="font-size:15px;line-height:1.65;color:oklch(0.42 0.02 80);margin:0 0 18px;padding-left:14px;">Homogeneizar y diluir muestras difíciles (jugos, salsas, miel) con resultado repetible.</p>
-        <div style="display:flex;flex-wrap:wrap;gap:6px;padding-left:14px;"><span class="dc-app-area" data-area="A1" title="Ver aplicaciones de A1 · Fluidos" style="display:inline-flex;align-items:center;gap:5px;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.02em;color:oklch(0.45 0.02 80);background:color-mix(in srgb, #4cc9f0 13%, white);border:1px solid color-mix(in srgb, #4cc9f0 40%, transparent);padding:3px 9px;border-radius:99px;"><span style="width:8px;height:8px;border-radius:50%;background:#4cc9f0;display:inline-block;"></span>A1 · Fluidos</span><span class="dc-app-area" data-area="A2" title="Ver aplicaciones de A2 · Microfluídica" style="display:inline-flex;align-items:center;gap:5px;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.02em;color:oklch(0.45 0.02 80);background:color-mix(in srgb, #f72585 13%, white);border:1px solid color-mix(in srgb, #f72585 40%, transparent);padding:3px 9px;border-radius:99px;"><span style="width:8px;height:8px;border-radius:50%;background:#f72585;display:inline-block;"></span>A2 · Microfluídica</span><span class="dc-app-area" data-area="A5" title="Ver aplicaciones de A5 · Integración" style="display:inline-flex;align-items:center;gap:5px;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.02em;color:oklch(0.45 0.02 80);background:color-mix(in srgb, #06d6a0 13%, white);border:1px solid color-mix(in srgb, #06d6a0 40%, transparent);padding:3px 9px;border-radius:99px;"><span style="width:8px;height:8px;border-radius:50%;background:#06d6a0;display:inline-block;"></span>A5 · Integración</span></div>
-      </div>
-      <div class="dc-app-card" data-code="COM-1" data-title="Monitoreo de higiene ATP" data-sectores="ALIMENTOS · INDUSTRIA" data-desc="Verificación de limpieza por bioluminiscencia en 10–20 s (HACCP / GFSI)." data-areas="A1,A4,A5" style="padding:var(--dc-pad-m) 40px;position:relative;overflow:hidden;;border-bottom:1px solid var(--dc-border)">
-        <div style="position:absolute;left:0;top:0;bottom:0;width:6px;display:flex;flex-direction:column;"><span style="flex:1;background:#4cc9f0;"></span><span style="flex:1;background:#9b5de5;"></span><span style="flex:1;background:#06d6a0;"></span></div>
-        <div style="display:flex;align-items:center;justify-content:space-between;padding-left:14px;">
-          <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--dc-accent);font-weight:500;">COM-1</span>
-          <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.08em;color:oklch(0.5 0.02 80);">ALTA FACTIBILIDAD</span>
-        </div>
-        <h3 style="font-family:'Newsreader',serif;font-weight:500;font-size:23px;margin:12px 0 6px;padding-left:14px;line-height:1.2;">Monitoreo de higiene ATP</h3>
-        <p style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.04em;color:var(--dc-accent);margin:0 0 10px;padding-left:14px;">ALIMENTOS · INDUSTRIA</p>
-        <p style="font-size:15px;line-height:1.65;color:oklch(0.42 0.02 80);margin:0 0 18px;padding-left:14px;">Verificación de limpieza por bioluminiscencia en 10–20 s (HACCP / GFSI).</p>
-        <div style="display:flex;flex-wrap:wrap;gap:6px;padding-left:14px;"><span class="dc-app-area" data-area="A1" title="Ver aplicaciones de A1 · Fluidos" style="display:inline-flex;align-items:center;gap:5px;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.02em;color:oklch(0.45 0.02 80);background:color-mix(in srgb, #4cc9f0 13%, white);border:1px solid color-mix(in srgb, #4cc9f0 40%, transparent);padding:3px 9px;border-radius:99px;"><span style="width:8px;height:8px;border-radius:50%;background:#4cc9f0;display:inline-block;"></span>A1 · Fluidos</span><span class="dc-app-area" data-area="A4" title="Ver aplicaciones de A4 · Óptica" style="display:inline-flex;align-items:center;gap:5px;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.02em;color:oklch(0.45 0.02 80);background:color-mix(in srgb, #9b5de5 13%, white);border:1px solid color-mix(in srgb, #9b5de5 40%, transparent);padding:3px 9px;border-radius:99px;"><span style="width:8px;height:8px;border-radius:50%;background:#9b5de5;display:inline-block;"></span>A4 · Óptica</span><span class="dc-app-area" data-area="A5" title="Ver aplicaciones de A5 · Integración" style="display:inline-flex;align-items:center;gap:5px;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.02em;color:oklch(0.45 0.02 80);background:color-mix(in srgb, #06d6a0 13%, white);border:1px solid color-mix(in srgb, #06d6a0 40%, transparent);padding:3px 9px;border-radius:99px;"><span style="width:8px;height:8px;border-radius:50%;background:#06d6a0;display:inline-block;"></span>A5 · Integración</span></div>
-      </div>
-      <div class="dc-app-card" data-code="G1" data-title="Micotoxinas en granos y vino" data-sectores="AGRO · BODEGAS · FOOD QC" data-desc="Detección POCT de aflatoxinas (granos) y ocratoxina A (vino), con evolución a cuantitativo vía FIA." data-areas="A1,A2,A4,A6" style="padding:var(--dc-pad-m) 40px;position:relative;overflow:hidden;;border-right:1px solid var(--dc-border)">
-        <div style="position:absolute;left:0;top:0;bottom:0;width:6px;display:flex;flex-direction:column;"><span style="flex:1;background:#4cc9f0;"></span><span style="flex:1;background:#f72585;"></span><span style="flex:1;background:#9b5de5;"></span></div>
-        <div style="display:flex;align-items:center;justify-content:space-between;padding-left:14px;">
-          <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--dc-accent);font-weight:500;">G1</span>
-          <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.08em;color:oklch(0.5 0.02 80);">★ ESTRATÉGICA</span>
-        </div>
-        <h3 style="font-family:'Newsreader',serif;font-weight:500;font-size:23px;margin:12px 0 6px;padding-left:14px;line-height:1.2;">Micotoxinas en granos y vino</h3>
-        <p style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.04em;color:var(--dc-accent);margin:0 0 10px;padding-left:14px;">AGRO · BODEGAS · FOOD QC</p>
-        <p style="font-size:15px;line-height:1.65;color:oklch(0.42 0.02 80);margin:0 0 18px;padding-left:14px;">Detección POCT de aflatoxinas (granos) y ocratoxina A (vino), con evolución a cuantitativo vía FIA.</p>
-        <div style="display:flex;flex-wrap:wrap;gap:6px;padding-left:14px;"><span class="dc-app-area" data-area="A1" title="Ver aplicaciones de A1 · Fluidos" style="display:inline-flex;align-items:center;gap:5px;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.02em;color:oklch(0.45 0.02 80);background:color-mix(in srgb, #4cc9f0 13%, white);border:1px solid color-mix(in srgb, #4cc9f0 40%, transparent);padding:3px 9px;border-radius:99px;"><span style="width:8px;height:8px;border-radius:50%;background:#4cc9f0;display:inline-block;"></span>A1 · Fluidos</span><span class="dc-app-area" data-area="A2" title="Ver aplicaciones de A2 · Microfluídica" style="display:inline-flex;align-items:center;gap:5px;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.02em;color:oklch(0.45 0.02 80);background:color-mix(in srgb, #f72585 13%, white);border:1px solid color-mix(in srgb, #f72585 40%, transparent);padding:3px 9px;border-radius:99px;"><span style="width:8px;height:8px;border-radius:50%;background:#f72585;display:inline-block;"></span>A2 · Microfluídica</span><span class="dc-app-area" data-area="A4" title="Ver aplicaciones de A4 · Óptica" style="display:inline-flex;align-items:center;gap:5px;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.02em;color:oklch(0.45 0.02 80);background:color-mix(in srgb, #9b5de5 13%, white);border:1px solid color-mix(in srgb, #9b5de5 40%, transparent);padding:3px 9px;border-radius:99px;"><span style="width:8px;height:8px;border-radius:50%;background:#9b5de5;display:inline-block;"></span>A4 · Óptica</span><span class="dc-app-area" data-area="A6" title="Ver aplicaciones de A6 · Reactivos" style="display:inline-flex;align-items:center;gap:5px;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.02em;color:oklch(0.45 0.02 80);background:color-mix(in srgb, #ffd166 13%, white);border:1px solid color-mix(in srgb, #ffd166 40%, transparent);padding:3px 9px;border-radius:99px;"><span style="width:8px;height:8px;border-radius:50%;background:#ffd166;display:inline-block;"></span>A6 · Reactivos</span></div>
-      </div>
-      <div class="dc-app-card" data-code="G11" data-title="POCT sin cadena de frío" data-sectores="SALUD · AGRO · FOOD SAFETY" data-desc="Test cualitativos con reactivos estables a 25–30 °C y lectura portátil." data-areas="A3,A6,A4,A1" style="padding:var(--dc-pad-m) 40px;position:relative;overflow:hidden;">
-        <div style="position:absolute;left:0;top:0;bottom:0;width:6px;display:flex;flex-direction:column;"><span style="flex:1;background:#f8961e;"></span><span style="flex:1;background:#ffd166;"></span><span style="flex:1;background:#9b5de5;"></span></div>
-        <div style="display:flex;align-items:center;justify-content:space-between;padding-left:14px;">
-          <span style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--dc-accent);font-weight:500;">G11</span>
-          <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.08em;color:oklch(0.5 0.02 80);">★ ESTRATÉGICA</span>
-        </div>
-        <h3 style="font-family:'Newsreader',serif;font-weight:500;font-size:23px;margin:12px 0 6px;padding-left:14px;line-height:1.2;">POCT sin cadena de frío</h3>
-        <p style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.04em;color:var(--dc-accent);margin:0 0 10px;padding-left:14px;">SALUD · AGRO · FOOD SAFETY</p>
-        <p style="font-size:15px;line-height:1.65;color:oklch(0.42 0.02 80);margin:0 0 18px;padding-left:14px;">Test cualitativos con reactivos estables a 25–30 °C y lectura portátil.</p>
-        <div style="display:flex;flex-wrap:wrap;gap:6px;padding-left:14px;"><span class="dc-app-area" data-area="A3" title="Ver aplicaciones de A3 · Incubación" style="display:inline-flex;align-items:center;gap:5px;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.02em;color:oklch(0.45 0.02 80);background:color-mix(in srgb, #f8961e 13%, white);border:1px solid color-mix(in srgb, #f8961e 40%, transparent);padding:3px 9px;border-radius:99px;"><span style="width:8px;height:8px;border-radius:50%;background:#f8961e;display:inline-block;"></span>A3 · Incubación</span><span class="dc-app-area" data-area="A6" title="Ver aplicaciones de A6 · Reactivos" style="display:inline-flex;align-items:center;gap:5px;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.02em;color:oklch(0.45 0.02 80);background:color-mix(in srgb, #ffd166 13%, white);border:1px solid color-mix(in srgb, #ffd166 40%, transparent);padding:3px 9px;border-radius:99px;"><span style="width:8px;height:8px;border-radius:50%;background:#ffd166;display:inline-block;"></span>A6 · Reactivos</span><span class="dc-app-area" data-area="A4" title="Ver aplicaciones de A4 · Óptica" style="display:inline-flex;align-items:center;gap:5px;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.02em;color:oklch(0.45 0.02 80);background:color-mix(in srgb, #9b5de5 13%, white);border:1px solid color-mix(in srgb, #9b5de5 40%, transparent);padding:3px 9px;border-radius:99px;"><span style="width:8px;height:8px;border-radius:50%;background:#9b5de5;display:inline-block;"></span>A4 · Óptica</span><span class="dc-app-area" data-area="A1" title="Ver aplicaciones de A1 · Fluidos" style="display:inline-flex;align-items:center;gap:5px;font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.02em;color:oklch(0.45 0.02 80);background:color-mix(in srgb, #4cc9f0 13%, white);border:1px solid color-mix(in srgb, #4cc9f0 40%, transparent);padding:3px 9px;border-radius:99px;"><span style="width:8px;height:8px;border-radius:50%;background:#4cc9f0;display:inline-block;"></span>A1 · Fluidos</span></div>
-      </div>
-    </div>
-        <div class="dc-app-filters" id="dcAppFilters" style="display:flex;flex-wrap:wrap;gap:10px 12px;padding:24px 40px;align-items:center;border-top:1px solid var(--dc-border);">
-      <span style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.08em;color:oklch(0.5 0.02 80);margin-right:4px;">ÁREAS</span>
-      <button class="dc-area-btn" data-area="A1" type="button"><span class="dot" style="background:#4cc9f0;"></span>A1 · Fluidos</button><button class="dc-area-btn" data-area="A2" type="button"><span class="dot" style="background:#f72585;"></span>A2 · Microfluídica</button><button class="dc-area-btn" data-area="A3" type="button"><span class="dot" style="background:#f8961e;"></span>A3 · Incubación</button><button class="dc-area-btn" data-area="A4" type="button"><span class="dot" style="background:#9b5de5;"></span>A4 · Óptica</button><button class="dc-area-btn" data-area="A5" type="button"><span class="dot" style="background:#06d6a0;"></span>A5 · Integración</button><button class="dc-area-btn" data-area="A6" type="button"><span class="dot" style="background:#ffd166;"></span>A6 · Reactivos</button>
-      <button class="dc-reset" id="dcAppReset" type="button">✕ LIMPIAR</button>
-    </div>
-        <div class="dc-app-panel" id="dcAppPanel" hidden>
-      <button class="p-close" type="button" aria-label="Cerrar">✕</button>
-      <span class="p-code" style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--dc-accent);font-weight:500;"></span>
-      <h3 class="p-title" style="font-family:'Newsreader',serif;font-weight:500;font-size:22px;margin:8px 0 6px;line-height:1.2;"></h3>
-      <p class="p-sect" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.04em;color:var(--dc-accent);margin:0 0 10px;"></p>
-      <p class="p-desc" style="font-size:14.5px;line-height:1.65;color:oklch(0.42 0.02 80);margin:0 0 14px;"></p>
-      <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:0.08em;color:oklch(0.5 0.02 80);margin-bottom:6px;">REQUIERE</div>
-      <div class="p-areas" style="display:flex;flex-wrap:wrap;gap:6px;"></div>
     </div>
   </section>
 
@@ -518,85 +425,5 @@ class Component extends DCLogic {
 }
 
 </script>
-
-<script>
-(function(){
-  var COLORS={A1:'#4cc9f0',A2:'#f72585',A3:'#f8961e',A4:'#9b5de5',A5:'#06d6a0',A6:'#ffd166'};
-  var LABELS={A1:'A1 · Fluidos',A2:'A2 · Microfluídica',A3:'A3 · Incubación',A4:'A4 · Óptica',A5:'A5 · Integración',A6:'A6 · Reactivos'};
-  var state={area:null};
-  function setup(){
-    var grid=document.getElementById('dcApps');
-    var filters=document.getElementById('dcAppFilters');
-    if(!grid||!filters) return false;
-    var cards=[].slice.call(grid.querySelectorAll('.dc-app-card'));
-    var btns=[].slice.call(filters.querySelectorAll('.dc-area-btn'));
-    var panel=document.getElementById('dcAppPanel');
-    var reset=document.getElementById('dcAppReset');
-    function render(){
-      cards.forEach(function(c){
-        var areas=(c.getAttribute('data-areas')||'').split(',');
-        var hit=state.area?areas.indexOf(state.area)>=0:true;
-        c.classList.toggle('dim', !!state.area && !hit);
-        c.classList.toggle('sel', !!state.area && hit);
-      });
-      btns.forEach(function(b){ b.classList.toggle('active', b.getAttribute('data-area')===state.area); });
-      if(reset) reset.style.display=(state.area || (panel && !panel.hidden)) ? 'inline-block' : 'none';
-    }
-    function openPanel(card){
-      if(!panel) return;
-      panel.querySelector('.p-code').textContent=card.getAttribute('data-code');
-      panel.querySelector('.p-title').textContent=card.getAttribute('data-title');
-      panel.querySelector('.p-sect').textContent=card.getAttribute('data-sectores');
-      panel.querySelector('.p-desc').textContent=card.getAttribute('data-desc');
-      var areas=(card.getAttribute('data-areas')||'').split(',');
-      var box=panel.querySelector('.p-areas');
-      box.innerHTML='';
-      areas.forEach(function(a){
-        var s=document.createElement('span');
-        s.className='p-chip';
-        s.style.background=COLORS[a]||'#999';
-        s.textContent=LABELS[a]||a;
-        box.appendChild(s);
-      });
-      panel.hidden=false;
-    }
-    grid.addEventListener('click',function(e){
-      var chip=e.target.closest('.dc-app-area');
-      if(chip){
-        var a=chip.getAttribute('data-area');
-        state.area=(state.area===a)?null:a;
-        render();
-        return;
-      }
-      var card=e.target.closest('.dc-app-card');
-      if(card) openPanel(card);
-    });
-    filters.addEventListener('click',function(e){
-      if(e.target.closest('.dc-reset')){
-        state.area=null;
-        if(panel) panel.hidden=true;
-        render();
-        return;
-      }
-      var b=e.target.closest('.dc-area-btn');
-      if(!b) return;
-      var a=b.getAttribute('data-area');
-      state.area=(state.area===a)?null:a;
-      render();
-    });
-    if(panel){
-      panel.querySelector('.p-close').addEventListener('click',function(){ panel.hidden=true; render(); });
-    }
-    render();
-    return true;
-  }
-  var tries=0;
-  var t=setInterval(function(){
-    if(setup()) clearInterval(t);
-    else if(++tries>150) clearInterval(t);
-  },200);
-})();
-</script>
-
 </body>
 </html>
