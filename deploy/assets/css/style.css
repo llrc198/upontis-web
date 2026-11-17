@@ -353,8 +353,11 @@ html.no-js .filters, html.no-js .f-leg{display:none}
   .hero{padding:56px 20px 50px}
   .hero-facts{gap:26px; display:grid; grid-template-columns:repeat(3,1fr)}
   .hero-facts li{flex-direction:column; align-items:flex-start; gap:4px}
-  .hero-under{grid-template-columns:1fr}
-  .hero-panel{position:static; margin-top:4px}
+  .hero-visual{max-width:420px; margin:0 auto}
+  .hero-strip{display:block; width:100%; max-width:380px; height:auto; margin:0 auto; border-radius:var(--r); box-shadow:0 18px 50px -20px rgba(0,0,0,.7)}
+  .hero-under{grid-template-columns:1fr; margin-top:20px; justify-items:center; text-align:center}
+  .hero-legend{justify-content:center}
+  .hero-panel{position:static; margin-top:18px; width:100%; max-width:380px; min-width:0}
   .sec{padding:70px 0}
   .foot-grid{gap:20px}
   .foot-brand{flex-direction:column; align-items:flex-start; gap:6px}
