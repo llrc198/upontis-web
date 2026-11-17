@@ -267,6 +267,9 @@ img{max-width:100%; display:block}
 .plat-areas{list-style:none; margin:20px 0 0; padding:16px 18px; display:grid; grid-template-columns:1fr 1fr; gap:10px 22px; background:var(--bg3); border:1px solid var(--line2); border-radius:var(--r-lg)}
 .plat-areas li{font-family:var(--mono); font-size:13px; color:var(--bone-dim)}
 .plat-areas li strong{color:var(--accent);margin-right:8px}
+.como-fig{margin:0 0 28px}
+.como-fig img{width:100%; height:auto; display:block; border:1px solid var(--line2); border-radius:var(--r-lg)}
+.wx-icon{vertical-align:-3px; margin-right:6px; color:#07C160}
 .caps{display:grid; grid-template-columns:repeat(3,1fr); gap:20px; margin-top:30px}
 .cap{
   background:var(--bg3); border:1px solid var(--line); border-radius:var(--r-lg);
