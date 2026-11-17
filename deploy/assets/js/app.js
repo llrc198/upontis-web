@@ -14,12 +14,28 @@
 
   // ── BURGER (mobile: toggle links) ──
   const burger = document.querySelector(".nav-burger");
+  let taps = 0, tapTimer = null;
   burger.addEventListener("click", () => {
     const links = document.querySelector(".nav-links");
     const cta = document.querySelector(".nav-cta");
     const cls = "nav-open";
     links.classList.toggle(cls);
     cta.classList.toggle(cls);
+    // Easter egg: 7 taps rápidos → μ-ggguau 🦍
+    taps++;
+    clearTimeout(tapTimer);
+    tapTimer = setTimeout(() => { taps = 0; }, 1800);
+    if (taps === 7) {
+      taps = 0;
+      const t = document.createElement("div");
+      t.textContent = "🦍 ¡μ-ggguau! 7 taps: ganaste un café con la μ de UPontis.";
+      t.style.cssText = "position:fixed;left:50%;bottom:24px;transform:translateX(-50%);z-index:9999;background:var(--orange,#e05533);color:#0A0C10;font:600 13px/1.4 var(--mono,monospace);padding:10px 18px;border-radius:999px;box-shadow:0 8px 30px rgba(0,0,0,.5);animation:toastIn .3s ease";
+      const st = document.createElement("style");
+      st.textContent = "@keyframes toastIn{from{opacity:0;transform:translate(-50%,12px)}to{opacity:1;transform:translate(-50%,0)}}";
+      document.head.appendChild(st);
+      document.body.appendChild(t);
+      setTimeout(() => t.remove(), 3800);
+    }
   });
 
   // ── PLATAFORMAS (caps) ──
@@ -33,7 +49,7 @@
   // ── APLICACIONES ──
   const appsBox = document.getElementById("apps");
   const detailBox = document.getElementById("appDetail");
-  let filtro = "TODAS";
+  let filtro = "A6";
 
   function areaName(code) { return AREAS[code] ? `${code} · ${AREAS[code].name}` : code; }
 
@@ -88,7 +104,7 @@
 
   renderApps();
   // detalle visible por defecto en TODAS (evita sección vacía al cargar)
-  showDetail("G1", false);
+  showDetail("G15", false);
 
   // ── REVEAL on scroll ──
   const revealEls = document.querySelectorAll(".reveal");
