@@ -96,6 +96,10 @@ img{max-width:100%; display:block}
   max-width:1180px; margin:0 auto; padding:0 28px;
   display:grid; grid-template-columns:1.05fr .95fr; gap:48px; align-items:center;
 }
+.hero-copy{position:relative}
+@media (min-width:1025px){
+  .hero-copy{top:44px}
+}
 .kicker{
   font-family:var(--mono); font-size:13px; letter-spacing:.18em; color:var(--dim);
   margin-bottom:22px;
